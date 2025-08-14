@@ -1,0 +1,56 @@
+body{
+ background-color: #0D0D14;
+ color: white;
+}
+
+h1 {
+	font color: white;
+    font-family: "Bakbak one", sans-serif;
+    font-size: 52px;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    line-height: 62px;
+    color:    ;
+}  
+ 
+    .banner__title{
+        color:white;
+    }
+
+   .title__word {
+	color: blue;
+}
+
+
+h2{
+font color: white;
+    font-family: "Bakbak one", sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: -0.5px;
+    line-height: 62px;
+
+}
+
+ ul{
+ 	list-style-type: none;
+ 	margin: 0;
+ 	padding: 0;
+ 	font-weight: bold;
+ }
+
+a:link{
+	color: white;
+	text-decoration: none;
+    
+}
+
+ button{
+	background-color: blue;
+	border: none;
+	color: white;
+	text-decoration: none;
+	text-anchor: center;
+	display: inline-block; 
+	font-size: 14px;
+}
