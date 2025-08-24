@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BINABOX Home Page</title>
 
-     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/src/styles/style.css">
   
 <link href="https://fonts.googleapis.com/css2?family=Bakbak+One&family=Black+Han+Sans&family=Candal&family=Lalezar&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
@@ -15,18 +15,28 @@
 </head>
 <body>
     <header class="page-header"> 
-        < class="page-header__logo"img src="logo.png" alt="binaboxLogo">
-        <nav class="page-header__navigation navigation-header">
-        <ul class"header-navigation__list">
-            <li class="header-navigation__item--active">
-                <a href="/home" class="page-header__link--active">Home</a>
+         <div class="page-header__logo">
+      <img src="logo.png" alt="Binabox Logo" class="page-header__logo-img">
+    
+    </div>
+           <nav class="page-header__nav">
+            <ul class="header-navigation__list">
+
+            <li class="header-navigation__item header-navigation__item--active">
+                 <a href="/home" class="page-header__link page-header__link--active">Home</a>
             </li>
+
             <li class="navigation__item">
                 <a class="page-header__link" href="/blog">Blog</a>
             </li>
-            <li class"navigation__item">
-                <a href="/catalog" class="nav__link">Catalog</a>
             </li>
+           <li class="navigation__item">
+                <a href="/catalog" class="nav__link">Catalog</a>
+           </li>
+           <li class="navigation__item">
+             <a href="/about" class="nav__link">About</a>
+           </li>
+
             <li class="navigation__item">
                 <a href="/about" class="nav__link" >Contact Us</a>
             </li>
@@ -108,7 +118,7 @@
          <section>
                           <h2 class="blog">Our Blog</h2>
             <article class="blog__card">
-                        <img src="med.png" class="card__image"alt="Neural Drift">
+                        <img src="med.png" class="card__image" alt="Neural Drift">
                         <span class="card__subtitle">Nova Riven</span> |
                         <span class="card__date">04 Dec 2022</span> |
                         <span class="card__lable">New</span>
@@ -136,13 +146,14 @@
                         <h3 class="card__title">Glitch Panther</h3>
                         <p class="card__copy">Cats always knew more than they showed. 
                           Especially the ones that vanish into code.</p>
-                        <a href="#" class__"button--action">Read more</a>
+                        <a href="#" class__"button button--action">Read more</a>
+                        
             </article>
             <div>
-                        <img src="ob.png" alt="Primal.exe">
+                        <img src="ob.png" alt="Primal exe">
                         <span>Dr. Wex Omega</span> |
                         <span>08 Dec 2022</span> |
-                        <span class="lable rare">Rare</span>
+                        <span class="label rare">Rare</span>
                         <h3>Primal.exe</h3>
                         <p>We tried to resurrect the past. What we got was
                           rage compressed into an algorithm.
@@ -172,37 +183,52 @@
             <a href="#">Read more</a>
         </section>
         <section>
+
             <h2>About us</h2>
+
             <p>We craft digital artifacts for those who live between worlds.
-Our space is built for creators, collectors, and the quietly obsessed.</p>
+                  Our space is built for creators, collectors, and the quietly obsessed.
+            </p>
           
              <ol>
                
-               <li><h3>Crystal Clear Quality</h3></li>
+               <li>
+                <h3>High Quality</h3>
+            </li>
                
                 <p>Every NFT we drop is razor-sharp, high-res, 
                   and glitch-free. Art that hits hard and stays clean.</p>
                
-               <li><h3>Curated Depth</h3></li>
-               
-                    <p>Not just big — meaningful.
-                         ach piece tells a story, 
-                      every collection builds a universe.</p
+               <li>
+                <h3>Big Collection</h3>
+            </li>
+                <p>Not just big — meaningful.ach piece tells a story, 
+                    every collection builds a universe.
+                </p>
                       
-                      <li><h3>Rare Source Access</h3></li>
+                      <li>
+                        <h3>Top Resourses</h3>
+                    </li>
           
                 <p>Early drops. Backstage peeks. 
-                    Our members don’t scroll — they unlock.</p>
+                    Our members dont scroll — they unlock.</p>
+
+                    <p>Our community isn't a list</p>
+
           
-                 <li><h3>Living Network</h3></li>
+                 <li>
+                        <h3>Big Community</h3>
+                 </li>
           
-                <p>Our community isn't a list — 
+                <p>Our community isn't a list 
                   it's a force. Artists, rebels, dreamers.</p>
           </ol>
              <a href="/about">Read more</a>
         </section>
         <section>
+
             <h2>Our team</h2>
+
                 <div>
                     <img src="1f.png" alt="team member">
                     <h3>Nova Riven</h3>
