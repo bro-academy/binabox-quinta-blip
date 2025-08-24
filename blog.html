@@ -16,35 +16,37 @@
 
 </head>
   <body>
-    <header class="blog-page__header">
-        <div class="header__logo">
-        <img src="logo.png" alt="Logo">
-        </div>
+       <!-- ============== HEADER ============== -->
+    <header class="blog__header">
+        <div class="blog-header__logo">
+        <img src="logo.png" alt="Binabox Logo" class="blog-header__logo-img">
+    </div>
         
-      <nav class="header__nav">
-        <ul class="nav__list">
-            <li class="nav__item">
-                <a href="/home" class="nav__link">Home</a>
+      <nav class="blog-header__nav">
+            <ul class="header-navigation__list">
+
+            <li class="navigation__item">
+                <a class="page-header__link" href="index.html">Home</a>
             </li>
-            <li class="nav__item nav__item--active">
-                <a href="/blog" class="nav__link">Blog</a>
+             <li class="header-navigation__item header-navigation__item--active">
+                 <a href="blog.html" class="page-header__link page-header__link--active">Blog</a>
             </li>
-            <li class="nav__item">
-                <a href="/catalog" class="nav__link">Catalog</a>
-            </li>
-            <li class="nav__item">
-                <a href="/about" class="nav__link">About Us</a>
+             <li class="navigation__item">
+                <a href="catalog.html" class="page-header__link">Catalog</a>
+           </li>
+           <li class="navigation__item">
+                <a href="conact.html" class="page-header__link" >Contact Us</a>
             </li>
         </ul>
       </nav>
       
-    <div class="header__actions">
-      <input type="text" class="header__search" placeholder="Search">
+    <div class="blog-header__actions">
+      <input type="text" class="blog-header__search" placeholder="Search">
      <a href="#" class="header__discord">Discord</a>
-      <button class="header__btn header__btn--login">Log In</button>
+     <button class="blog-page-header__btn page-header__btn--login">Log In</button>
     </div>
   </header>
-
+      <!-- ============== MAIN TITLE ============== -->
   <main class="blog-page__main">
   
     <section class="page-title">
@@ -63,7 +65,7 @@
             </li>
       </ul>     
      </section> 
-
+<!-- ============== ASIDE ============== -->
     <div class="content-wrapper">
 
         <aside class="blog-aside">
@@ -107,6 +109,7 @@
              </div>      
               
        </aside>     
+       <!-- ============== MAIN BLOG ============== -->
                      <article class="blog-article">
                        <figure class="blog-article__image">
                          <img src="dra.png" alt="Dragon">
@@ -223,60 +226,40 @@
         </div>
      </section> 
 </main>
-  
-<footer class="blog-footer">
+  <!-- ============== FOOTER ============== -->
+<footer class="footer">
+              <section class="footer__main">
+              <h2 class="footer__brand">BINABOX</h2>
+              <p class="footer__description">
+                  We are the best way to check the rarity of NFT collection.
+             </p>
 
-    <div class="blog-footer__top">
-     <div class="blog-footer__brand">
-      <img src="logo.png" alt="Binabox Logo" class="blog-footer__logo">
-      <p class="blog-footer__description">
-        We are the best way to check the rarity of NFT collection.
-      </p>
+       <nav class="footer__nav">
+      <ul class="footer__list">
+        <li class="footer__item"><a class="footer__link" href="index.html">Home</a></li>
+        <li class="footer__item"><a class="footer__link" href="blog.html">Blog</a></li>
+        <li class="footer__item"><a class="footer__link" href="catalog.html">Catalog</a></li>
+        <li class="footer__item"><a class="footer__link" href="contact.html">Contact Us</a></li>
+        <li class="footer__item"><a class="footer__link" href="terms.html">Terms of Service</a></li>
+        <li class="footer__item"><a class="footer__link" href="privacy.html">Privacy Policy</a></li>
+        <li class="footer__item"><a class="footer__link" href="whitepaper.html">Whitepaper</a></li>
+        <li class="footer__item"><a class="footer__link" href="help.html">Help Center</a></li>
+      </ul>
+    </nav>
+
+    </section>
+
+     <div class="footer__bottom">
+       <h3 class="footer__copy">BINABOX 2025 — ALL rights reserved</h3>
+       <div class="footer__social">
+         <a class="footer__social-link" href="https://twitter.com">Twitter</a>
+        <a class="footer__social-link" href="https://facebook.com">Facebook</a>
+        <a class="footer__social-link" href="https://telegram.com">Telegram</a>
+       <a class="footer__social-link" href="https://youtube.com">YouTube</a>
+       <a class="footer__social-link" href="https://tiktok.com">TikTok</a>
+       <a class="footer__social-link" href="https://discord.com">Discord</a>
     </div>
-            <nav class="blog-footer__nav">
-
-                 <ul class="blog-footer__nav-list">
-
-                    <li class="blog-footer__nav-item">
-                        <a href="/home"class="blog-footer__nav-link" >Home</a></li>
-
-                    <li class="blog-footer__nav-item">
-                        <a href="/blog" class="blog-footer__nav-link">Blog</a></li>
-
-                    <li class="blog-footer__nav-item">
-                        <a href="/catalog" class="blog-footer__nav-link">Catalog</a></li>
-
-                    <li class="blog-footer__nav-item">
-                        <a href="/contact" class="blog-footer__nav-link">Contact Us</a></li>
-
-                    <li class="blog-footer__nav-item">
-                        <a href="/terms" class="blog-footer__nav-link">Terms of Service</a></li>
-
-                    <li class="blog-footer__nav-item">
-                        <a href="/privacy" class="blog-footer__nav-link">Privacy Policy</a></li>
-
-                    <li class="blog-footer__nav-item">
-                        <a href="/whitepaper" class="blog-footer__nav-link">Whitepaper</a></li>
-
-                    <li class="blog-footer__nav-item">
-                        <a href="/help" class="blog-footer__nav-link">Help Center</a></li>
-                </ul>
-            </nav>
   </div>
-       
-        <div class="blog-footer__bottom">
-        
-           <p class="blog-footer__copy">BINABOX 2022  ALL rights reserved</p>
-           <div class="blog-footer__social">
-            <a href="https://twitter.com" class="blog-footer__social blog-footer__social--twitter">Twitter</a>
-            <a href="https://facebook.com" class="blog-footer__social blog-footer__social--facebook">Facebook</a>
-            <a href="https://telegram.com" class="blog-footer__social blog-footer__social--telegram">Telegram</a>
-            <a href="https://youtube.com" class="blog-footer__social blog-footer__social--youtube">YouTube</a>
-            <a href="https://tiktok.com" class="blog-footer__social blog-footer__social--tiktok">TikTok</a>
-            <a href="https://discord.com" class="blog-footer__social blog-footer__social--discord">Discord</a>
-            </div>
-        </div>
-       </section>
-    </footer>      
+  </footer>
 </body>
 </html>
