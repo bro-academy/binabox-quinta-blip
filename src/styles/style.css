@@ -1,8 +1,11 @@
 body {
   margin: 0;
+   padding: 0;
   font-family: "Bakbak one", Arial, sans-serif;
+   font-family: "poppins", Arial, sans-serif;
   background: #0d0d15;
   color: #e9eef5;
+  color: rgba(255, 255, 255, 0.85);
 }
 
 
@@ -52,8 +55,7 @@ body {
 .page-header__btn--login {
   background: #0265DC;
   color: #fff;
-  border: solsolid rgba(255, 255, 255, 0.2);
-  border: 1px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 0px;
 }
 
@@ -133,6 +135,18 @@ vertical-align: middle;
    text-decoration: none;
   }
 
+  * Modifiers */
+.button--primary {
+  background-color: #0066ff;
+  color: #F5F8FB;
+}
+
+.button--disable {
+  background-color: #151723;
+  color: #ccc;
+  cursor: not-allowed;
+}
+
 
 
                                      /* Catalog */
@@ -154,7 +168,7 @@ vertical-align: middle;
 }
 
 .catalog__controls-button {
-  border: 1px solid #ddd OD 7FB;
+  border: 1px solid #eff5ef;
   background: transparent;
   color: #fff;
   border-radius: 0px;
@@ -174,15 +188,33 @@ vertical-align: middle;
 
 
 
-.card {
+.catalog {
   background-color: #1d1c28;
   border-radius: 0px;
   
 }
 
+.catalog__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.catalog__item {
+  background: #0d0d15;
+  border-radius: 5px;
+  padding: 16px;
+  text-align: center;
+  
+}
+.catalog__image {
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
 
 /* Badge */
-.card__badge {
+.catalog__badge {
   font-family: "Poppins",  Arial, sans-serif;
   font-size:  14px;
   font-weight: 600;
@@ -192,19 +224,19 @@ vertical-align: middle;
   color: #fff;
 }
 
-.card__badge--new {
+.catalog__badge--new {
   background: #fff;
   color: #0066ff; 
 }
 
-.card__badge--soldout {
+.catalog__badge--soldout {
   background-color: #EA3829; /* danger background */
   color: #fff; /* White text */
 
 
 }
 
-.card__value {
+.catalog__value {
   font-family:  "Bakbak one", Arial, sans-serif;
   font-weight: 400;
    font-size:  36px;
@@ -212,7 +244,7 @@ vertical-align: middle;
     letter-spacing: -0.5px;
     color: #fff;
 }
-.card__title {
+.catalog__title {
    font-family:  "Poppins", Arial, sans-serif;
    font-weight: 500;
    font-size: 20px;
@@ -229,7 +261,8 @@ vertical-align: middle;
   opacity: 0.95;
   }                               
 
-.blog__title {
+.blog__post-title,
+.blog__title  {
   font-family:  "Bakbak one", Arial, sans-serif;
   font-weight: 400;
   font-size: 36px;
@@ -242,15 +275,21 @@ vertical-align: middle;
 
 /* ---- Blog card ---- */
 
-.blog-card {
+.blog__post {
   background: #151723;                
   border: 1px solid rgba(255,255,255,0.06);
   border-radius: 0px;
  
 }
 
+.blog__image {
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
 
-.blog-card__badge {
+
+.blog__badge,
+.blog__label {
   font-family:  "Poppins", Arial, sans-serif;
   background: #ffffff;
   color: #0265DC;                  
@@ -262,9 +301,15 @@ vertical-align: middle;
   text-align: right;
 
 }
+.blog__meta {
+  font-size: 0.875rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
 
-
-.blog-card__author {
+.blog__subtitle {
   font-family: "Poppins", Arial, sans-serif;
   font-weight: 600;
   font-size: 14px;
@@ -272,8 +317,7 @@ vertical-align: middle;
   letter-spacing: 0px;
   color: #eff5ef;
 }
-.blog-card__date {
-
+.blog__date {
   font-family: "Poppins",Arial, sans-serif;
   font-weight: 600;
   font-size: 14px;
@@ -282,17 +326,9 @@ vertical-align: middle;
   color: #EFF5FA;
 }
 
-.blog-card__title {
-   font-family: "Bakbak one", Arial, sans-serif;
-   font-weight: 400;
-  font-size: 36px;
-  line-height: 48px;
-  letter-spacing: -0.5px;
-  color: #F5F8FB;
-}
 
-
-.blog-card__description {
+.blog__description,
+.blog__copy {
   font-family:  "Poppins", Arial, sans-serif;
    font-weight: 400;
     font-size: 16px;
@@ -300,8 +336,25 @@ vertical-align: middle;
   letter-spacing: 0px;
   color: #EFF5FA;
 }
+.blog__btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 2px;
+  background-color: #151723; 
+  color: #F5F8FB;
+  text-decoration: none;
+  font-family: "Poppins", Arial, sans-serif;
+font-weight: 600;
+font-style: SemiBold;
+font-size: 16px;
+line-height: 24px;
+letter-spacing: 0px;
+text-align: center;
+vertical-align: middle;
 
-.btn.load-more {
+}
+
+.blog__btn--read-more {
    font-family: "Poppins",Arial, sans-serif;
   border: 2px solid rgba(255,255,255,0.16);
   background: transparent;
@@ -363,7 +416,7 @@ vertical-align: middle;
   font-weight: 400;
   font-size: 24px;
   line-height: 32px;
-  letter-spacing: opx ;
+  letter-spacing: 0px ;
  
 }
 
@@ -442,7 +495,7 @@ vertical-align: middle;
   line-height: 48px;
   letter-spacing: -0.5px;
   text-align: center;
-  color: f8f7ff;
+  color: #f8f7ff;
   text-decoration: none;
 }
 
@@ -723,15 +776,27 @@ a {
   padding: 1rem 3rem;
   background: #0d0d15;
 }
+.blogheader__nav{
+    align-items: center;
+  padding: 1rem 3rem;
+  background: #0d0d15;
+
+}
 /* Navigation container */
-.nav__list {
+.blog-header__list {
   list-style: none;       
   margin: 0;
   padding: 0;
   
 }
+
+.blog-header__item{
+margin: 0;
+
+}
+
 /* Nav links */
-.nav__link {
+.blog-header__link {
   color: white;           
   text-decoration: none;
   font-family: "Poppins", Arial, sans-serif;
