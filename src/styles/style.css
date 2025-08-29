@@ -88,66 +88,78 @@ body {
 
 }
 
-.banner__stat { 
-  font-family: "Bakbak one", Arial, sans-serif;
-  font-weight: 400;
-  font-size: 52px;
-  line-height: 62px;
-  letter-spacing: -0.5px;
-  text-decoration: none;
+.banner__button  {
+ border: 2px solid rgba(255, 255, 255, 0.2);
+ font-size: 18px;
+ font-weight: 600;
+ border-radius: 2px;
+   
 }
 
-.banner__stat span {
-font-family: "Poppins", Arial, sans-serif;
-font-weight: 400;
-font-size: 16px;
-line-height: 24px;
-letter-spacing: 0px;
-text-decoration: none;
-
-}
-
-.banner__btn {
+.banner__button--primary {
+  font-family:  "Poppins", Arial, sans-serif;
+  background-color: #007bff;
   color: #F5F8FB;
- background:#0066ff;
-font-family:  "Poppins", Arial, sans-serif;
-font-weight: 600;
-font-size: 18px;
-line-height: 28px;
-letter-spacing: 0px;
-vertical-align: middle;
- border-radius: 0px;
- border: 1px solid rgba(255, 255, 255, 0.2); 
-  
-}
-
-.button--primary {
-   background-color: #007bff;
-  color: #fff;
   border: none;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  text-decoration: none;
+
 }
 
-.button--disable  {
-  background: #151723;
-  color: #fff;
+.banner___button--disable  {
+  font-family:  "Poppins", Arial, sans-serif;
+   background: #151723;
    border: 2px solid rgba(255, 255, 255, 0.2);
-  color: #F5F8FB;
+   color: #F5F8FB;
    text-decoration: none;
+   font-weight: 600;
+   line-height: 28px;
+   letter-spacing: 0px;
+   vertical-align: middle;
+
   }
 
   * Modifiers */
-.button--primary {
+ .banner__button--primary {
   background-color: #0066ff;
   color: #F5F8FB;
 }
 
-.button--disable {
+ .banner__button--disable {
   background-color: #151723;
   color: #ccc;
-  cursor: not-allowed;
 }
 
+banner-section {
+  background-color: #151723;
+  vertical-align: bottom;
+}
 
+.banner-section__value {
+  font-family: "Bakbak One", Arial, sans-serif;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 52px;
+  line-height: 62px;
+  letter-spacing: -0.5px;
+  font-weight: 700;
+  color: #F5F8FB; 
+}
+.banner-section__text {
+   font-family: "Bakbak One", Arial, sans-serif;
+   font-weight: 400;
+   font-style: Regular;
+   font-size: 16px;
+   line-height: 24px;
+   letter-spacing: 0px;
+   vertical-align: bottom;
+  color: #F5F8FB; 
+  line-height: 1.4;
+}
 
                                      /* Catalog */
 .catalog {
@@ -155,6 +167,11 @@ vertical-align: middle;
   border-radius: 8px;
   opacity: 0.95; 
  
+}
+.catalog__header {
+  align-items: center;
+  margin-bottom: 30px;
+  
 }
 
 .catalog__title {
@@ -167,21 +184,44 @@ vertical-align: middle;
   color: #F8F7FF;
 }
 
-.catalog__controls-button {
-  border: 1px solid #eff5ef;
-  background: transparent;
-  color: #fff;
-  border-radius: 0px;
-  font-size: 14px;
- 
+.catalog__button {
+   background-color: #0d0d15;
+  color: #eff5ef;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  border: none;
+  font-family: "Poppins", Arial, sans-serif;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0px;
+  vertical-align: middle;
 }
 
-
-.catalog__controls-button--active {
-  background: #2563eb; 
-  border-color: #2563eb;
-  color: #fff;
+/* Default button (See all) */
+.catalog__button--default {
+  padding: 8px 18px;
+  background-color: #0d0d15;
+  color: #eff5ef;
+  border-radius: 6px;          
+  border: none;                
+  font-weight: 600;
 }
+
+.catalog__button--next {
+  background-color: #007bff;  
+  color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+}
+
 
 
 /* Catalog layout */
@@ -207,11 +247,34 @@ vertical-align: middle;
   text-align: center;
   
 }
+.catalog__product {
+  background-color: #0d0d15;
+  border-radius: 6px;
+  text-align: center;
+
+}
 .catalog__image {
   border-radius: 4px;
   margin-bottom: 8px;
 }
 
+.catalog__title {
+   font-family:  "Poppins", Arial, sans-serif;
+   font-weight: 500;
+   font-size: 20px;
+   line-height: 28px;
+   letter-spacing: 0px;
+  color: #EFF5FA;
+}
+
+.catalog__value {
+  font-family:  "Bakbak one", Arial, sans-serif;
+  font-weight: 400;
+   font-size:  36px;
+    line-height: 48px;
+    letter-spacing: -0.5px;
+    color: #fff;
+}
 
 /* Badge */
 .catalog__badge {
@@ -236,22 +299,8 @@ vertical-align: middle;
 
 }
 
-.catalog__value {
-  font-family:  "Bakbak one", Arial, sans-serif;
-  font-weight: 400;
-   font-size:  36px;
-    line-height: 48px;
-    letter-spacing: -0.5px;
-    color: #fff;
-}
-.catalog__title {
-   font-family:  "Poppins", Arial, sans-serif;
-   font-weight: 500;
-   font-size: 20px;
-   line-height: 28px;
-   letter-spacing: 0px;
-  color: #EFF5FA;
-}
+
+
 
                                  /* Blog section */
 
@@ -853,7 +902,7 @@ margin: 0;
 
 
 /* Header Primary Button */
-.header__btn {
+.blog-header__btn {
   background: #2563eb;
   color: #F8F7FF;
   border-radius: 2px;
@@ -863,22 +912,16 @@ margin: 0;
 }
 
 /* Discord link styled like a button */
-.header__discord {
-  background: rgba(20, 20, 20, 0.9); 
+.blog-header__discord {
+  background: #0d0d15;
   color: #F8F7FF; 
   border: 2px solid rgba(255, 255, 255, 0.4); 
   border-radius: 2px;
   text-decoration: none;
   font-weight: 600;
-}
+ }
 
-.header__discord:hover {
-  background: rgba(255, 255, 255, 0.1); 
-  border: 1px solid #F5F8FB; 
-  color: #F5F8FB; 
-}
-
-/*----- Page Title + Breadcrumbs-----*/
+     /*----- Page Title + Breadcrumbs-----*/
 .page-title {
    background: #0d0d15;
 

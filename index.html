@@ -27,18 +27,18 @@
                  <a href="index.html" class="page-header__link page-header__link--active">Home</a>
             </li>
 
-            <li class="navigation__item">
+            <li class="header-navigation__item">
                 <a class="page-header__link" href="blog.html">Blog</a>
             </li>
-            </li>
-           <li class="navigation__item">
+            
+           <li class="header-navigation__item">
                 <a href="catalog.html" class="page-header__link">Catalog</a>
            </li>
-           <li class="navigation__item">
+           <li class="header-navigation__item">
              <a href="about.html" class="page-header__link">About</a>
            </li>
 
-            <li class="navigation__item">
+            <li class="header-navigation__item">
                 <a href="conact.html" class="page-header__link" >Contact Us</a>
             </li>
         </ul>
@@ -71,8 +71,8 @@
             </div>
            </div>
             <div class="banner__actions">
-            <button class="banner__button button--primary" type="button">Connect Wallet</button>
-            <a href="Whitelist-now" class="banner__button button--disable">Whitelist now</a>
+            <button class="banner__button banner__button--primary" type="button">Connect Wallet</button>
+            <button class="banner__button banner__button--disable" type="button"> Whitelist now </button>
            </div>
 
             <img src="binaboxcube.png" class="banner__image" alt="Binabox Cube">
@@ -84,42 +84,52 @@
         <section class="catalog">
           <div class="catalog__header">
             <h2 class="catalog__title">Catalog</h2>
-            <a href="catalog.html" class="catalog__button--default">See all</a>
+            <button class="catalog__button catalog__button--default" type="button">see all</button>
 
         <div class="catalog__controls">
-          <button class="catalog__button button-left" type="button" aria-label="Previous"></button>
-          <button class="catalog__button button-right" type="button" aria-label="Next"></button>
+          <button class="catalog__button catalog__button-left" type="button" aria-label="Previous"></button>
+          <button class="catalog__button catalog__button-right" type="button" aria-label="Next"></button>
         </div>
       </div>
             <ul class="catalog__list">
                 <li class="catalog__item">
+                        <article class="catalog__product">
                         <img src="ск.png" class="catalog__image" alt="Product">
-                        <span class="cayalog__badge">New</span>
+                        <span class="catalog__badge">New</span>
                         <span class="catalog__value">$1990</span>
+                        </article>
                         <p class="catalog__title">Echo of Bones</p>
                 </li>
                 <li class="catalog__item">
+                        <article class="catalog__product"></article>
                         <img src="ко.png" class="catalog__image" alt="Product">
                         <span class="catalog__badge">New</span>
                         <span class="catalog__value">$2390</span>
+                        </article>
                         <p class="catalog__title">Nyx the Watcher</p>
                 </li>
                 <li class="catalog__item">
+                        <article class="catalog__product">
                         <img src="no.png" class="catalog__image" alt="Product">
                         <span class="catalog__badge">Sold out</span>
                         <span class="catalog__value">$20</span>
+                        </article>
                         <p class="catalog__title">Blade of silence</p>
                  </li>
                 <li class="catalog__item">
+                        <article class="catalog__product">
                         <img src="kn.png" class="catalog__image" alt="Product">
                         <span class="catalog__badge">New</span>
                         <span class="catalog__value">$1,000,000</span>
+                        </article>
                         <p class="catalog__title">Data Core: Alpha</p>
                 </li>
                 <li class="catalog__item">
+                        <article class="catalog__product">
                         <img src="dv.png" class="catalog__image" alt="Product">
                         <span class="catalog__badge">New</span>
                         <span class="catalog__value">$199.5</span>
+                        </article>
                         <p class="catalog__title">Phantom cansole</p>
                 </li>
             </ul>
@@ -199,10 +209,10 @@
                      <div class="blog__meta">
                      <span class="blog__subtitle">Tony Nguyen</span> |
                      <span class="blog__date">20 Jun 2022</span> |
-                     <span class="blog__label">NFT</span>
+                     <span class="blog__badge">NFT</span>
                      </div>
                      <h3 class="blog__title">White Protocol</h3>
-                     <p class="blog__copy">
+                     <p class="blog__description">
                        At first, it was just a signal — clean, white, 
                        hypnotic. We didn't know it was alive.
                      </p>
@@ -215,10 +225,10 @@
                   <div class="blog__meta">
                   <span class="blog__subtitle">Echo Zero</span> |
                   <span class="blog__date">09 Dec 2022</span> |
-                  <span class="blog__label">Artifact</span>
+                  <span class="blog__badge">Artifact</span>
                   </div>
                   <h3 class="blog__title">Retrocore</h3>
-                  <p class="blog__copy">
+                  <p class="blog__description">
                       This console comes from a game no one remembers 
                       how to play. But it's still powered on.
                  </p>
