@@ -1,11 +1,10 @@
 body {
   margin: 0;
    padding: 0;
-  font-family: "Bakbak one", Arial, sans-serif;
-   font-family: "poppins", Arial, sans-serif;
-  background: #0d0d15;
-  color: #e9eef5;
-  color: rgba(255, 255, 255, 0.85);
+   font-family: "Bakbak One", "Poppins", Arial, sans-serif;
+   background: #0d0d15;
+   color: #e9eef5;
+   color: rgba(255, 255, 255, 0.85);
 }
 
 
@@ -21,6 +20,7 @@ body {
   color: #fff;
   font-size: 16px;
   text-decoration: none;
+  list-style: none;
 }
 
 /* 🔹 Page Header Search */
@@ -66,7 +66,7 @@ body {
 }
 
 .banner__title {
-  font-family:"Bakbak one", Arial, sans-serif;
+  font-family:"Bakbak One", Arial, sans-serif;
   margin-bottom: 1px;
   font-size: 52px;
   font-weight: 400;
@@ -110,7 +110,7 @@ body {
 
 }
 
-.banner___button--disable  {
+.banner__button--disable  {
   font-family:  "Poppins", Arial, sans-serif;
    background: #151723;
    border: 2px solid rgba(255, 255, 255, 0.2);
@@ -175,7 +175,7 @@ banner-section {
 }
 
 .catalog__title {
-  font-family: "bakbak one", Arial, sans-serif;
+  font-family: "Bakbak one", Arial, sans-serif;
   font-weight: 400;
   margin-bottom: 1px;
   font-size: 24px;
@@ -337,12 +337,11 @@ banner-section {
 }
 
 
-.blog__badge,
-.blog__label {
+.blog__badge {
   font-family:  "Poppins", Arial, sans-serif;
   background: #ffffff;
   color: #0265DC;                  
-  font-size: 14px;
+  font-size: 14px; 
   font-weight: 600;
   letter-spacing: 0px;
   border-radius: 0px;
@@ -376,8 +375,7 @@ banner-section {
 }
 
 
-.blog__description,
-.blog__copy {
+.blog__description {
   font-family:  "Poppins", Arial, sans-serif;
    font-weight: 400;
     font-size: 16px;
@@ -393,13 +391,13 @@ banner-section {
   color: #F5F8FB;
   text-decoration: none;
   font-family: "Poppins", Arial, sans-serif;
-font-weight: 600;
-font-style: SemiBold;
-font-size: 16px;
-line-height: 24px;
-letter-spacing: 0px;
-text-align: center;
-vertical-align: middle;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: center;
+  vertical-align: middle;
 
 }
 
@@ -427,7 +425,7 @@ vertical-align: middle;
 }
 
 .about__title {
-   font-family: "Bakbak one", Arial, sans-serif;
+   font-family: "Bakbak One", Arial, sans-serif;
   font-weight: 400;
   font-size: 36px;
   line-height: 48px;
@@ -457,7 +455,7 @@ vertical-align: middle;
 
 /* --- Each  Card Feature --- */
 .about__item {
-  font-family:  "Bakbak one",Arial, sans-serif;
+  font-family:  "Bakbak One",Arial, sans-serif;
   background: #1a1a22;
   color: #F5F8FB;
   border-radius: 10px;
@@ -480,7 +478,7 @@ vertical-align: middle;
 
 /* --- Headings & Text --- */
 .about__heading {
-  font-family:  "Bakbak one",Arial, sans-serif;
+  font-family:  "Bakbak One",Arial, sans-serif;
   font-weight: 400;
   font-size: 24px;
   line-height: 32px;
@@ -538,7 +536,7 @@ vertical-align: middle;
 }
 
 .team__title {
-  font-family:  "Bakbak one",Arial, sans-serif;
+  font-family:  "Bakbak One",Arial, sans-serif;
   font-weight: 400;
   font-size: 36px;
   line-height: 48px;
@@ -549,7 +547,7 @@ vertical-align: middle;
 }
 
 .team__list {
-  font-family:"Bakbak one", Arial, sans-serif;
+  font-family:"Bakbak One", Arial, sans-serif;
   list-style: none;
   margin: 0;
 }
@@ -566,7 +564,7 @@ team-card:hover {
 }
 
 .team__name {
-  font-family: "bakbak one", Arial, sans-serif;
+  font-family: "bakbak One", Arial, sans-serif;
   font-weight: 400;
   font-size: 24px;
   line-height: 32px;
@@ -613,7 +611,7 @@ team-card:hover {
 
 
 .faq {
-  font-family: "Bakbak one",Arial, sans-serif;
+  font-family: "Bakbak One",Arial, sans-serif;
   background-color: #0d0d15;
   margin: 0px ;
   color: #F8F7FF;
@@ -622,7 +620,7 @@ team-card:hover {
 }
 
 .faq__title {
-  font-family:  "Bakbak one",Arial, sans-serif;
+  font-family:  "Bakbak One",Arial, sans-serif;
   font-size: 36px;
   font-weight: 400;
   letter-spacing: -0.5px;
@@ -641,7 +639,7 @@ team-card:hover {
 }
 
 .faq__question {
-  font-family:  "Bakbak one",Arial, sans-serif;
+  font-family:  "Bakbak One", Arial, sans-serif;
   font-weight: 400;
   font-size: 24px;
   line-height: 32px;
@@ -732,7 +730,7 @@ faq__item[open] .faq__question::after {
 .footer__nav-title {
 margin-bottom: 1rem;
 color: #fff;
-font-family: "Poppins" Aril, sans sans-serif;
+font-family: "Poppins" Arial, sans sans-serif;
 font-weight: 500;
 font-style: Medium;
 font-size: 20px;
@@ -978,7 +976,7 @@ text-align: center;
 
 .blog-aside__title {
   color: #F5F8FB;
-  font-family: "Bakbak One", Arial, sans-sarif;
+  font-family: "Bakbak One", Arial, sans-serif;
   font-weight: 400;
   font-style: Regular;
   font-size: 24px;
@@ -1056,7 +1054,7 @@ text-align: center;
 
 }
 /* Coming Soon Button */
-.blog-article__coming {
+.blog-article__btn {
   background: #2563eb;
   color: #F5F8FB;
   border-radius: 2px;
@@ -1124,7 +1122,7 @@ text-align: center;
 }
 
 
-blog-article__quote cite {
+.blog-article__quote cite {
   display: flex;
   align-items: center;
   gap: 0.6rem;
