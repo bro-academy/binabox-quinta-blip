@@ -1,0 +1,64 @@
+{% extends "layouts/base.twig" %}
+
+{% block title %}BINABOX Blog Page{% endblock %}
+
+{% block head %}
+    <link href="https://fonts.googleapis.com/css2?family=Bakbak+One&family=Black+Han+Sans&family=Candal&family=Lalezar&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bakbak+One&family=Black+Han+Sans&family=Candal&family=Lalezar&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block header %}
+     {% include "partials/header.twig" %}
+{% endblock %}
+
+{% block content %}
+    <main class="blog-page__main">
+        <!-- Page Title Section -->
+        <section class="page-title">
+            <h1 class="page-title__heading">{{ page_title }}</h1>
+            <ul class="page-title__breadcrumbs">
+                {% for breadcrumb in breadcrumbs %}
+                    <li>
+                        <a href="{{ breadcrumb.href }}" class="breadcrumbs__link">{{ breadcrumb.text }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <!-- Content Wrapper -->
+        <div class="content-wrapper">
+            <!-- Aside Section -->
+            <aside class="blog-aside">
+                <h2 class="blog-aside__title">Categories</h2>
+                <ul class="blog-aside__list">
+                    {% for category in categories %}
+                        <li>
+                            <a href="{{ category.href }}" class="blog-aside__link">
+                                {{ category.text }} ({{ category.count }})
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+
+                <div class="blog-aside__tags">
+                    <h3 class="tags__title">Tag</h3>
+                    <ul class="tags__list">
+                        {% for tag in tags %}
+                            <li><button class="tags__btn">{{ tag }}</button></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- Blog Article Section (Partial) -->
+            {% include 'blog-article.twig' with { article: article } %}
+
+            <!-- Blog Content Section (Partial) -->
+            {% include 'blog-content.twig' with { content: content } %}
+        </div>
+    </main>
+{% endblock %}
+
+{% block footer %}
+    {% include "partials/footer.twig" %}
+{% endblock %}

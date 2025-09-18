@@ -1,0 +1,66 @@
+{
+  "page_title": "BINABOX Blog",
+  "breadcrumbs": [
+    { "text": "Home", "href": "index.html" },
+    { "text": "Blog", "href": "blog.html" }
+  ],
+  "categories": [
+    { "text": "NFT News", "href": "blog.html?category=nft-news", "count": 12 },
+    { "text": "Guides", "href": "blog.html?category=guides", "count": 5 },
+    { "text": "Interviews", "href": "blog.html?category=interviews", "count": 3 }
+  ],
+  "tags": ["NFT", "Blockchain", "Art", "Crypto"],
+  "article": {
+    "image": "/src/assets/images/blog-main.png",
+    "alt": "NFT Artwork",
+    "caption": "Featured NFT of the month",
+    "title": "How NFTs are Changing the Art World",
+    "status": "Featured",
+    "author": "Jane Doe",
+    "date": "2025-01-10",
+    "text": "Explore the impact of NFTs on modern art and digital ownership.",
+    "points": [
+      "NFTs provide provable digital ownership",
+      "Artists can reach a global audience",
+      "Blockchain ensures transparency and security"
+    ],
+    "features": [
+      {
+        "image": "/src/assets/images/feature1.png",
+        "alt": "Feature 1",
+        "text": "Feature description 1"
+      },
+      {
+        "image": "/src/assets/images/feature2.png",
+        "alt": "Feature 2",
+        "text": "Feature description 2"
+      }
+    ],
+    "quote": {
+      "text": "NFTs are revolutionizing the art market.",
+      "rating": "5/5",
+      "company": "CryptoArt Magazine"
+    },
+    "gallery": [
+      { "image": "/src/assets/images/gallery1.png", "alt": "Gallery 1", "caption": "Artwork 1" },
+      { "image": "/src/assets/images/gallery2.png", "alt": "Gallery 2", "caption": "Artwork 2" }
+    ]
+  },
+  "content": {
+    "title": "In-Depth Analysis",
+    "paragraphs": [
+      "NFTs have transformed how art is bought, sold, and valued in the digital era.",
+      "Collectors can now verify authenticity and ownership on the blockchain."
+    ],
+    "subtitle": "Additional Insights",
+    "generators": [
+      { "text": "Learn more about NFTs ", "link": { "text": "here", "href": "https://example.com/nft-guide" } }
+    ],
+    "tags": ["NFT", "Digital Art", "Blockchain"],
+    "share_links": [
+      { "platform": "Twitter", "href": "https://twitter.com/share?url=blog.html" },
+      { "platform": "Facebook", "href": "https://facebook.com/share?url=blog.html" },
+      { "platform": "LinkedIn", "href": "https://linkedin.com/shareArticle?url=blog.html" }
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+<article class="blog-article">
+  <figure class="blog-article__image">
+    <img src="{{ article.image }}" alt="{{ article.alt }}">
+    <figcaption>{{ article.caption }}</figcaption>
+  </figure>
+
+  <h2 class="blog-article__title">{{ article.title }}</h2>
+
+  <div class="blog-article__meta">
+    {% if article.status %}
+      <button class="blog-article__btn blog-article__btn--coming">{{ article.status }}</button>
+    {% endif %}
+    <span class="blog-article__author">{{ article.author }}</span> |
+    <span class="blog-article__date">{{ article.date }}</span>
+  </div>
+
+  <p class="blog-article__text">{{ article.text }}</p>
+
+  <ul class="blog-article__list">
+    {% for point in article.points %}
+      <li>{{ point }}</li>
+    {% endfor %}
+  </ul>
+
+  <div class="blog-article__features">
+    {% for feature in article.features %}
+      <div class="feature">
+        <img src="{{ feature.image }}" alt="{{ feature.alt }}">
+        <p>{{ feature.text }}</p>
+      </div>
+    {% endfor %}
+  </div>
+
+  <blockquote class="blog-article__quote">
+    <p>{{ article.quote.text }}</p>
+    <cite>
+      <span class="rating">{{ article.quote.rating }}</span>
+      <span class="company">{{ article.quote.company }}</span>
+    </cite>
+  </blockquote>
+
+  <figure class="blog-article__gallery">
+    {% for gallery_item in article.gallery %}
+      <img src="{{ gallery_item.image }}" alt="{{ gallery_item.alt }}">
+      <figcaption>{{ gallery_item.caption }}</figcaption>
+    {% endfor %}
+  </figure>
+</article>

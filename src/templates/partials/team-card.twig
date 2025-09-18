@@ -1,0 +1,14 @@
+<div class="team__card">
+  <img src="{{ member.image }}" alt="{{ member.name }}" class="team__image">
+  <h3 class="team__name">{{ member.name }}</h3>
+  <p class="team__role">{{ member.role }}</p>
+  <ul class="team__social">
+    {% for social in member.social %}
+      <li class="team__social-item">
+        <a href="{{ social.link }}" class="team__social-link" target="_blank" rel="noopener">
+          {{ social.platform }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

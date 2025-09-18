@@ -1,0 +1,13 @@
+<article class="blog__post">
+  <img src="{{ post.image }}" class="blog__image" alt="{{ post.title }}">
+  <div class="blog__meta">
+    <span class="blog__subtitle">{{ post.author }}</span> |
+    <span class="blog__date">{{ post.date }}</span>
+    {% if post.badge %}
+      | <span class="blog__badge">{{ post.badge }}</span>
+    {% endif %}
+  </div>
+  <h3 class="blog__title">{{ post.title }}</h3>
+  <p class="blog__description">{{ post.description }}</p>
+  <button class="blog__btn blog__btn--read-more">Read more</button>
+</article>
