@@ -1,89 +1,113 @@
-{% extends "src/templates/layouts/base.twig"%}
+{% extends "src/templates/layouts/base.twig" %}
 
-{% block title %}BINABOX Home Page{% endblock %}
-
-{% block header %}
-    <link href="https://fonts.googleapis.com/css2?family=Bakbak+One&family=Black+Han+Sans&family=Candal&family=Lalezar&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Bakbak+One&family=Black+Han+Sans&family=Candal&family=Lalezar&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-{% endblock %}
-
-{% block header %}
-   {% include "partials/header.twig" %}
-{% endblock %}
 
 {% block content %}
-    <main>
-        <!-- Banner Section -->
-        <section class="banner">
-            <h1 class="banner__title">WITH <span class="BINABOX">BINABOX</span> EXPLORE NFT COLLECTION</h1>
-            <p class="banner__text">{{ banner_text }}</p>
-            <div class="banner-section">
-                {% for stat in banner_stats %}
-                    <div class="banner-section__item">
-                        <span class="banner-section__value">{{ stat.value }}</span>
-                        <p class="banner-section__text">{{ stat.text }}</p>
-                    </div>
-                {% endfor %}
-            </div>
-            <div class="banner__actions">
-                <button class="banner__button banner__button--primary" type="button">Connect Wallet</button>
-                <button class="banner__button banner__button--disable" type="button">Whitelist now</button>
-            </div>
-            <img src="{{ banner_image }}" class="banner__image" alt="Binabox Cube">
-        </section>
 
-        <!-- Catalog Section -->
-        <section class="catalog">
-            <div class="catalog__header">
-                <h2 class="catalog__title">Catalog</h2>
-                <button class="catalog__button catalog__button--default" type="button">see all</button>
-                <div class="catalog__controls">
-                    <button class="catalog__button catalog__button-left" type="button" aria-label="Previous"></button>
-                    <button class="catalog__button catalog__button-right" type="button" aria-label="Next"></button>
-                </div>
-            </div>
-           <ul class="catalog__list">
-            {% for product in catalog_products %}
-                <li class="catalog__item">
-                    {% include "partials/catalog.twig" with { product: product } %}
-                </li>
-            {% endfor %}
-        </ul>
-        </section>
+<!-- ============== BANNER ============== -->
+<section class="banner">
+    <h1 class="banner__title">{{ common.site.title }}: Explore NFT Collections</h1>
+    <p class="banner__text">{{ page.banner_text }}</p>
 
-        <!-- Blog Section -->
-         <section class="blog">
-        <h2 class="blog__title">Our Blog</h2>
-        {% for post in blog_posts %}
-             {% include "partials/blog-card.twig" with { post: post }%} 
+    <div class="banner-section">
+        {% for stat in page.banner_stats %}
+            <div class="banner-section__item">
+                <span class="banner-section__value">{{ stat.value }}</span>
+                <p class="banner-section__text">{{ stat.text }}</p>
+            </div>
         {% endfor %}
-    </section>
+    </div>
 
-        <!-- About Section -->
-        <section class="about">
-            <h2 class="about__title">About us</h2>
-            {% include "partials/about.twig" with { about_intro: about_intro, about_items: about_items } %}
-            <button class="btn load-more">Read more</button>
-        </section>
+    <div class="banner__actions">
+        <button class="banner__button banner__button--primary">Connect Wallet</button>
+        <button class="banner__button banner__button--disable">Whitelist now</button>
+    </div>
 
-        <!-- Team Section -->
-        <section class="team">
-        <h2 class="team__title">Our Team</h2>
-        {% for member in team_members %}
-            {% include "partials/team-card.twig" with { member: member } %}
-            {% endfor %}
-        </section>
+    <img src="{{ page.banner_image }}" class="banner__image" alt="Banner Image">
+</section>
 
-        <!-- FAQ Section -->
-         <section class="faq">
-            <h2 class="faq__title">FAQs</h2>
-            {% for faq in faqs %}
-                {% include "partials/faq.twig" with { faq: faq } %}
-            {% endfor %}
-        </section>
-    </main>
-{% endblock %}
+<!-- ============== CATALOG ============== -->
+<section class="catalog">
+    <div class="catalog__header">
+        <h2 class="catalog__title">Catalog</h2>
+        <button class="catalog__button catalog__button--default">See All</button>
+    </div>
 
-{% block footer %}
-   {% include "partials/footer.twig" %}
+    <ul class="catalog__list">
+        {% for product in page.catalog_products %}
+            <li class="catalog__item">
+                <article class="catalog__product">
+                    <img src="{{ product.image }}" class="catalog__image" alt="{{ product.title }}">
+                    {% if product.badge %}
+                        <span class="catalog__badge">{{ product.badge }}</span>
+                    {% endif %}
+                    <span class="catalog__value">{{ product.price }}</span>
+                    <p class="catalog__title">{{ product.title }}</p>
+                </article>
+            </li>
+        {% endfor %}
+    </ul>
+</section>
+
+<!-- ============== BLOG ============== -->
+<section class="blog">
+    <h2 class="blog__title">Our Blog</h2>
+    {% for post in page.blog_posts %}
+        <article class="blog__post">
+            <img src="{{ post.image }}" class="blog__image" alt="{{ post.title }}">
+            <div class="blog__meta">
+                <span class="blog__subtitle">{{ post.author }}</span> |
+                <span class="blog__date">{{ post.date }}</span>
+                {% if post.badge %} | <span class="blog__badge">{{ post.badge }}</span>{% endif %}
+            </div>
+            <h3 class="blog__title">{{ post.title }}</h3>
+            <p class="blog__description">{{ post.description }}</p>
+            <button class="blog__btn blog__btn--read-more">Read more</button>
+        </article>
+    {% endfor %}
+</section>
+
+<!-- ============== ABOUT ============== -->
+<section class="about">
+    <h2 class="about__title">About Us</h2>
+    <p class="about__intro">{{ page.about_intro }}</p>
+    <ol class="about__list">
+        {% for item in page.about_items %}
+            <li class="about__item">
+                <h3 class="about__subtitle">{{ item.subtitle }}</h3>
+                <p class="about__text">{{ item.text }}</p>
+            </li>
+        {% endfor %}
+    </ol>
+</section>
+
+<!-- ============== TEAM ============== -->
+<section class="team">
+    <h2 class="team__title">Our Team</h2>
+    {% for member in page.team_members %}
+        <div class="team__card">
+            <img src="{{ member.image }}" alt="{{ member.name }}" class="team__image">
+            <h3 class="team__name">{{ member.name }}</h3>
+            <p class="team__role">{{ member.role }}</p>
+            <ul class="team__social">
+                {% for social in member.social %}
+                    <li class="team__social-item">
+                        <a href="{{ social.link }}" class="team__social-link" target="_blank">{{ social.platform }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endfor %}
+</section>
+
+<!-- ============== FAQ ============== -->
+<section class="faq">
+    <h2 class="faq__title">FAQs</h2>
+    {% for faq in page.faqs %}
+        <details class="faq__item">
+            <summary class="faq__question">{{ faq.question }}</summary>
+            <p class="faq__answer">{{ faq.answer }}</p>
+        </details>
+    {% endfor %}
+</section>
+
 {% endblock %}
