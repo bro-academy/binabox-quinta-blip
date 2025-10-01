@@ -1,4 +1,5 @@
-{% extends "src/templates/layouts/base.twig" %}
+{% extends "templates/layouts/base.twig" %}
+
 
 
 {% block content %}
@@ -22,7 +23,9 @@
         <button class="banner__button banner__button--disable">Whitelist now</button>
     </div>
 
-    <img src="{{ page.banner_image }}" class="banner__image" alt="Banner Image">
+   <img src="{{ page.banner_image }}" class="banner__image" alt="Banner Image">
+
+
 </section>
 
 <!-- ============== CATALOG ============== -->
@@ -36,7 +39,8 @@
         {% for product in page.catalog_products %}
             <li class="catalog__item">
                 <article class="catalog__product">
-                    <img src="{{ product.image }}" class="catalog__image" alt="{{ product.title }}">
+                   <img src="{{ product.image }}" class="catalog__image" alt="{{ product.title }}">
+
                     {% if product.badge %}
                         <span class="catalog__badge">{{ product.badge }}</span>
                     {% endif %}
@@ -54,6 +58,7 @@
     {% for post in page.blog_posts %}
         <article class="blog__post">
             <img src="{{ post.image }}" class="blog__image" alt="{{ post.title }}">
+
             <div class="blog__meta">
                 <span class="blog__subtitle">{{ post.author }}</span> |
                 <span class="blog__date">{{ post.date }}</span>
@@ -85,7 +90,8 @@
     <h2 class="team__title">Our Team</h2>
     {% for member in page.team_members %}
         <div class="team__card">
-            <img src="{{ member.image }}" alt="{{ member.name }}" class="team__image">
+          <img src="{{ member.image }}" alt="{{ member.name }}" class="team__image">
+
             <h3 class="team__name">{{ member.name }}</h3>
             <p class="team__role">{{ member.role }}</p>
             <ul class="team__social">
