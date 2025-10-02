@@ -3,20 +3,20 @@
     "title": "BINABOX",
     "discordUrl": "#",
     "menu": [
-      { "label": "Home", "url": "index.twig", "active": true },
-      { "label": "Blog", "url": "blog.twig", "active": false },
-      { "label": "Catalog", "url": "catalog.twig", "active": false },
-      { "label": "About", "url": "about.twig", "active": false },
-      { "label": "Contact", "url": "contact.twig", "active": false }
+      { "label": "Home", "url": "/index.html", "active": true },
+      { "label": "Blog", "url": "/blog.html", "active": false },
+      { "label": "Catalog", "url": "/catalog.html", "active": false },
+      { "label": "About", "url": "/about.html", "active": false },
+      { "label": "Contact", "url": "/contact.html", "active": false }
     ]
   },
   "footer": {
     "description": "We are the best way to check the rarity of NFT collections.",
     "menu": [
-      { "label": "Home", "url": "index.twig" },
-      { "label": "Blog", "url": "blog.twig" },
-      { "label": "Catalog", "url": "catalog.twig" },
-      { "label": "Contact", "url": "contact.twig" }
+      { "label": "Home", "url": "/index.html" },
+      { "label": "Blog", "url": "/blog.html" },
+      { "label": "Catalog", "url": "/catalog.html" },
+      { "label": "Contact", "url": "/contact.html" }
     ],
     "social": [
       { "name": "Twitter", "url": "https://twitter.com" },

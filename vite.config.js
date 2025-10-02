@@ -17,6 +17,10 @@ const indexData = JSON.parse(
   fs.readFileSync(path.resolve('src/data/index.json'), 'utf-8')
 );
 
+const blogData = JSON.parse(
+  fs.readFileSync(path.resolve('src/data/blog.json'), 'utf-8')
+);
+
 export default defineConfig({
   server: {
     port: 5173,
@@ -38,7 +42,8 @@ export default defineConfig({
       ],
       globals: {
         common: commonData,
-        page: indexData 
+        page: indexData,
+        blog: blogData    
       }
     }),
     nunjucks(),
