@@ -1,35 +1,34 @@
-<!doctype html>
-<html lang='en'>
-  <head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>
-      {% block title %}{{ common.siteTitle }}{% endblock %}
-    </title>
-    <link rel='stylesheet' href='/src/styles/main.scss'>
-  </head>
-  <body>
-    <header>
-      <div class='container'>
-        <h1>
-          {% block header %}<img src='/src/assets/images/logo.svg' alt=''>{% endblock %}
-        </h1>
-      </div>
-    </header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}BINABOX{% endblock %}</title>
 
-    <main>
-      <div class='container'>
-        {% block content %}{% endblock %}
-      </div>
-    </main>
+    <!-- Global Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bakbak+One&family=Black+Han+Sans&family=Candal&family=Lalezar&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bakbak+One&family=Black+Han+Sans&family=Candal&family=Lalezar&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-    <footer>
-      <div class='container'>
-        <p>
-          &copy; {% block year %}2024{% endblock %}
-          {{ common.siteTitle }}. All rights reserved.
-        </p>
-      </div>
-    </footer>
-  </body>
+   <link rel="stylesheet" href="/src/styles/style.css">
+
+
+
+    {% block head %}{% endblock %}
+</head>
+<body>
+{# Header block (default includes header partial) #}
+    {% block header %}
+       {% include "../partials/header.twig" %}
+    {% endblock %}
+
+    {# Main content block #}
+    {% block content %}{% endblock %}
+
+    {# Footer block (default includes footer partial) #}
+    {% block footer %}
+        {% include "../partials/footer.twig" %}
+    {% endblock %}
+
+
+</body>
 </html>

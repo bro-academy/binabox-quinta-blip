@@ -1,0 +1,144 @@
+{% extends "templates/layouts/base.twig" %}
+
+{% block title %}{{ blog.page_title }}{% endblock %}
+
+{% block content %}
+<main class="blog-page__main">
+
+    <!-- Page Title Section -->
+    <section class="page-title">
+        <h1 class="page-title__heading">{{ blog.page_title }}</h1>
+        <ul class="page-title__breadcrumbs">
+            {% for breadcrumb in blog.breadcrumbs %}
+                <li>
+                    <a href="{{ breadcrumb.href }}" class="breadcrumbs__link">{{ breadcrumb.text }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <div class="content-wrapper">
+
+        <!-- Sidebar -->
+        <aside class="blog-aside">
+            <h2 class="blog-aside__title">Categories</h2>
+            <ul class="blog-aside__list">
+                {% for category in blog.categories %}
+                    <li>
+                        <a href="{{ category.href }}" class="blog-aside__link">
+                            {{ category.text }} ({{ category.count }})
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+
+            <div class="blog-aside__tags">
+                <h3 class="tags__title">Tags</h3>
+                <ul class="tags__list">
+                    {% for tag in blog.tags %}
+                        <li><button class="tags__btn">{{ tag }}</button></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Blog Articles -->
+        {% for article in blog.articles %}
+        <article class="blog-article">
+            <figure class="blog-article__image">
+                {% if article.image %}
+                    <img src="{{ article.image }}" alt="{{ article.title }}">
+                {% endif %}
+                {% if article.caption %}
+                    <figcaption>{{ article.caption }}</figcaption>
+                {% endif %}
+            </figure>
+
+            <h2 class="blog-article__title">{{ article.title }}</h2>
+
+            <div class="blog-article__meta">
+                {% if article.status_button %}
+                    <button class="blog-article__btn">{{ article.status_button }}</button>
+                {% endif %}
+                <span class="blog-article__author">{{ article.author }}</span> |
+                <span class="blog-article__date">{{ article.date }}</span>
+            </div>
+
+            <p class="blog-article__text">{{ article.text }}</p>
+
+            {% if article.list_items %}
+            <ul class="blog-article__list">
+                {% for item in article.list_items %}
+                    <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+
+            {% if article.features %}
+            <div class="blog-article__features">
+                {% for feature in article.features %}
+                <div class="feature">
+                    {% if feature.image %}
+                        <img src="{{ feature.image }}" alt="{{ feature.title }}">
+                    {% endif %}
+                    <p>{{ feature.title }}</p>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            {% if article.quote %}
+            <blockquote class="blog-article__quote">
+                <p>{{ article.quote.text }}</p>
+                <cite>
+                    {% if article.quote.rating %}<span class="rating">{{ article.quote.rating }}</span>{% endif %}
+                    {% if article.quote.company %}<span class="company">{{ article.quote.company }}</span>{% endif %}
+                </cite>
+            </blockquote>
+            {% endif %}
+
+            {% if article.gallery %}
+            <figure class="blog-article__gallery">
+                {% for img in article.gallery %}
+                    <img src="{{ img.src }}" alt="{{ img.alt }}">
+                    {% if img.caption %}
+                        <figcaption>{{ img.caption }}</figcaption>
+                    {% endif %}
+                {% endfor %}
+            </figure>
+            {% endif %}
+        </article>
+        {% endfor %}
+
+        <!-- Blog Content Blocks -->
+        <section class="blog-content">
+            {% for block in blog.content_blocks %}
+                {% if block.title %}<h3 class="blog-content__subtitle">{{ block.title }}</h3>{% endif %}
+                {% if block.text %}<p class="blog-content__text">{{ block.text }}</p>{% endif %}
+            {% endfor %}
+
+            {% if blog.content_extras %}
+            <div class="blog-extras">
+                {% if blog.content_extras.tags %}
+                <div class="blog-extras__tags">
+                    <span class="blog-extras__tags-label">Tags:</span>
+                    {% for tag in blog.content_extras.tags %}
+                        <button class="blog-extras__tag">{{ tag }}</button>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                {% if blog.content_extras.share %}
+                <div class="blog-extras__share">
+                    <h4 class="blog-extras__share-label">Share:</h4>
+                    {% for link in blog.content_extras.share %}
+                        <a href="{{ link.href }}" class="blog-extras__share-link">{{ link.text }}</a>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            {% endif %}
+        </section>
+
+    </div>
+</main>
+{% endblock %}

@@ -1,0 +1,30 @@
+<nav class="main-nav">
+    <div class="container">
+        <!-- Logo -->
+        <a href="index.html" class="logo">
+            <div class="site-header__logo">
+            <img src="/src/assets/images/logo.svg" alt="Binabox Logo" class="site-header__logo-img">
+            </div>
+
+        </a>
+
+        <!-- Navigation Menu -->
+        <ul class="nav-menu">
+            {% for item in common.site.menu %}
+                <li class="nav-item {% if item.active %}active{% endif %}">
+                    <a href="{{ item.url }}" class="nav-link">{{ item.label }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <!-- Social Icons / Discord -->
+        <div class="nav-social">
+            {% for social in common.footer.social %}
+                <a href="{{ social.url }}" class="social-link" target="_blank" rel="noopener">{{ social.name }}</a>
+            {% endfor %}
+        </div>
+
+        <!-- Discord / Action Button -->
+        <a href="{{ common.site.discordUrl }}" class="btn btn-discord">Join Discord</a>
+    </div>
+</nav>

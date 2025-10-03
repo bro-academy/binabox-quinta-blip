@@ -1,5 +1,65 @@
 {
-  "index": {
-    "title": "Hello World!"
-  }
+  "banner_text": "Discover the latest NFT collections and trends with BINABOX.",
+  "banner_image": "/src/assets/images/banner-cube.png",
+  "banner_stats": [
+    { "value": "500+", "text": "Collections" },
+    { "value": "10K+", "text": "Users" },
+    { "value": "1M+", "text": "Transactions" }
+  ],
+  "catalog_products": [
+    { "image": "/src/assets/images/product1.png", "title": "NFT Collection 1", "price": "2.5 ETH", "badge": "Hot" },
+    { "image": "/src/assets/images/product2.png", "title": "NFT Collection 2", "price": "1.2 ETH", "badge": "New" },
+    { "image": "/src/assets/images/product3.png", "title": "NFT Collection 3", "price": "3.0 ETH", "badge": null }
+  ],
+
+  "blog_posts": [
+    {
+      "image": "/src/assets/images/blog1.png",
+      "author": "Jane Doe",
+      "date": "2025-01-10",
+      "badge": "Featured",
+      "title": "How NFTs are Changing the Art World",
+      "description": "Explore the impact of NFTs on modern art and digital ownership."
+    },
+    {
+      "image": "/src/assets/images/blog2.png",
+      "author": "John Smith",
+      "date": "2025-02-05",
+      "badge": null,
+      "title": "Top NFT Collections of 2025",
+      "description": "A curated list of the most sought-after NFT collections this year."
+    }
+  ],
+  "about_intro": "BINABOX is your gateway to discovering, tracking, and trading NFTs.",
+  "about_items": [
+    { "subtitle": "Mission", "text": "To simplify NFT discovery and trading for everyone." },
+    { "subtitle": "Vision", "text": "To become the leading NFT platform worldwide." },
+    { "subtitle": "Values", "text": "Innovation, Security, Transparency." }
+  ],
+  "team_members": [
+    {
+      "name": "Alice Johnson",
+      "role": "CEO",
+      "image": "/src/assets/images/team1.png",
+      "social": [
+        { "platform": "Twitter", "link": "https://twitter.com/alice" },
+        { "platform": "LinkedIn", "link": "https://linkedin.com/in/alice" }
+      ]
+    },
+    {
+      "name": "Bob Lee",
+      "role": "CTO",
+      "image": "/src/assets/images/team2.png",
+      "social": [
+        { "platform": "Twitter", "link": "https://twitter.com/bob" },
+        { "platform": "LinkedIn", "link": "https://linkedin.com/in/bob" }
+      ]
+    }
+  ],
+  "faqs": [
+   { "question": "What is BINABOX?", "answer": "BINABOX is a platform to explore, track, and trade NFT collections." },
+   { "question": "How can I buy an NFT?", "answer": "Connect your wallet and follow the purchase instructions on the NFT page." },
+   { "question": "Is BINABOX secure?", "answer": "Yes, we use state-of-the-art security protocols to protect users." }
+  ]
 }
+

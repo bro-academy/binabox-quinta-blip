@@ -1,0 +1,9 @@
+<p class="about__intro">{{ about_intro }}</p>
+<ol class="about__list">
+  {% for item in about_items %}
+    <li class="about__item">
+      <h3 class="about__subtitle">{{ item.subtitle }}</h3>
+      <p class="about__text">{{ item.text }}</p>
+    </li>
+  {% endfor %}
+</ol>

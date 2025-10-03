@@ -1,5 +1,26 @@
 {
-  "common": {
-    "siteTitle": "Bro Starter"
+  "site": {
+    "title": "BINABOX",
+    "discordUrl": "#",
+    "menu": [
+      { "label": "Home", "url": "/index.html", "active": true },
+      { "label": "Blog", "url": "/blog.html", "active": false },
+      { "label": "Catalog", "url": "/catalog.html", "active": false },
+      { "label": "About", "url": "/about.html", "active": false },
+      { "label": "Contact", "url": "/contact.html", "active": false }
+    ]
+  },
+  "footer": {
+    "description": "We are the best way to check the rarity of NFT collections.",
+    "menu": [
+      { "label": "Home", "url": "/index.html" },
+      { "label": "Blog", "url": "/blog.html" },
+      { "label": "Catalog", "url": "/catalog.html" },
+      { "label": "Contact", "url": "/contact.html" }
+    ],
+    "social": [
+      { "name": "Twitter", "url": "https://twitter.com" },
+      { "name": "Discord", "url": "https://discord.com" }
+    ]
   }
 }

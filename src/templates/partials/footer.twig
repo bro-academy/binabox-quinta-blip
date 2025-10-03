@@ -1,0 +1,24 @@
+<footer class="site-footer">
+  <div class="container">
+
+    <!-- Footer Description -->
+    <p class="footer-description">{{ common.footer.description }}</p>
+
+    <!-- Footer Menu -->
+    <ul class="footer-menu">
+      {% for item in common.footer.menu %}
+        <li class="footer-menu-item">
+          <a href="{{ item.url }}" class="footer-link">{{ item.label }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <!-- Social Links -->
+    <div class="footer-social">
+      {% for social in common.footer.social %}
+        <a href="{{ social.url }}" class="social-link" target="_blank" rel="noopener">{{ social.name }}</a>
+      {% endfor %}
+    </div>
+
+  </div>
+</footer>

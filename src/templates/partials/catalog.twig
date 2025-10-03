@@ -1,0 +1,10 @@
+<li class="catalog__item">
+  <article class="catalog__product">
+    <img src="{{ product.image }}" class="catalog__image" alt="{{ product.title }}">
+    {% if product.badge %}
+      <span class="catalog__badge">{{ product.badge }}</span>
+    {% endif %}
+    <span class="catalog__value">{{ product.price }}</span>
+    <p class="catalog__title">{{ product.title }}</p>
+  </article>
+</li>
