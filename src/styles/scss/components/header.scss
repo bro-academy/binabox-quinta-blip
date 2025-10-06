@@ -1,0 +1,45 @@
+.page-header {
+  background: $color-bg-dark;
+
+  &__logo-img {
+    width: 36px;
+    height: 40px;
+   
+  }
+
+  &__link {
+    color: $color-white;
+    font-size: 16px;
+    text-decoration: none;
+  }
+
+  &__search {
+    background: $color-bg-dark;
+    color: $color-text-light;
+    border: 2px solid $color-gray;
+    border-radius: $radius-sm;
+    outline: none;
+
+    &::placeholder {
+      color: $color-gray;
+      opacity: 1;
+    }
+  }
+
+  &__btn {
+    border-radius: $radius-sm;
+    font-size: 14px;
+
+    &--discord {
+      @include button(transparent);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      color: $color-white;
+    }
+
+    &--login {
+      @include button($color-primary);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: $color-white;
+    }
+  }
+}

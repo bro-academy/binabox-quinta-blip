@@ -1,0 +1,37 @@
+// _mixins.scss
+
+// Button Mixin
+// Usage: @include button($bg: #007bff, $color: #fff);
+@mixin button($bg: #007bff, $color: #fff, $radius: 4px, $padding: 0.5rem 1rem) {
+  background-color: $bg;
+  color: $color;
+  border: none;
+  border-radius: $radius;
+  padding: $padding;
+  font-family: "Poppins", Arial, sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+/* Responsive Typography Mixin */
+@mixin responsive-text($mobile-size, $tablet-size: null, $desktop-size: null) {
+  font-size: $mobile-size;
+
+  @if $tablet-size {
+    @media (min-width: 768px) {
+      font-size: $tablet-size;
+    }
+  }
+
+  @if $desktop-size {
+    @media (min-width: 1024px) {
+      font-size: $desktop-size;
+    }
+  }
+}

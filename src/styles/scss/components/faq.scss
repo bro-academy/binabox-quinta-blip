@@ -1,0 +1,42 @@
+.faq {
+  background: $color-bg-dark;
+  border-radius: $radius-md;
+  padding: 30px 20px;
+
+  &__title {
+    font-family: $font-heading;
+    font-size: 28px;
+    font-weight: 700;
+    color: $color-white;
+    margin-bottom: 20px;
+  }
+
+  &__item {
+    background: $color-bg-light;
+    border-radius: $radius-sm;
+    margin-bottom: 12px;
+    padding: 12px;
+
+    & summary {
+      font-family: $font-base;
+      font-size: 16px;
+      font-weight: 600;
+      color: $color-white;
+      cursor: pointer;
+    }
+
+    &__question {
+      font-family: $font-base;
+      font-size: 16px;
+      font-weight: 600;
+      color: $color-white;
+    }
+
+    &__answer {
+      font-family: $font-base;
+      font-size: 14px;
+      color: $color-white;
+      margin-top: 8px;
+    }
+  }
+}

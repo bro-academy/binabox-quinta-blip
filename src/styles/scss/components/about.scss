@@ -1,0 +1,64 @@
+.about {
+  background: $color-bg-dark;
+  border-radius: $radius-md;
+  padding: 30px 20px;
+
+  &__title {
+    font-family: $font-heading;
+    font-size: 28px;
+    font-weight: 700;
+    color: $color-white;
+    margin-bottom: 16px;
+  }
+
+  &__intro {
+    font-family: $font-base;
+    font-size: 14px;
+    line-height: 20px;
+    color: $color-white;
+    margin-bottom: 20px;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+
+    &__item {
+      background: $color-bg-light;
+      border-radius: $radius-sm;
+      padding: 12px;
+      margin-bottom: 12px;
+
+      &__subtitle {
+        font-family: $font-heading;
+        font-size: 18px;
+        font-weight: 600;
+        color: $color-white;
+        margin-bottom: 6px;
+      }
+
+      &__text {
+        font-family: $font-base;
+        font-size: 14px;
+        color: $color-white;
+        line-height: 20px;
+      }
+    }
+  }
+
+  .btn {
+    background-color: $color-primary;
+    color: $color-white;
+    font-family: $font-base;
+    font-weight: 600;
+    border: none;
+    border-radius: $radius-sm;
+    padding: 8px 16px;
+    cursor: pointer;
+
+    &.load-more {
+      background-color: $color-primary-dark;
+    }
+  }
+}

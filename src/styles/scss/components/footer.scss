@@ -1,0 +1,73 @@
+.footer {
+  background: $color-bg-dark;
+  padding: 40px 20px;
+  border-radius: $radius-md;
+
+  &__main {
+    margin-bottom: 30px;
+  }
+
+  &__brand {
+    font-family: $font-heading;
+    font-size: 32px;
+    font-weight: 700;
+    color: $color-white;
+    margin-bottom: 12px;
+  }
+
+  &__description {
+    font-family: $font-base;
+    font-size: 14px;
+    color: $color-white;
+    margin-bottom: 20px;
+  }
+
+  &__nav {
+    & .footer__list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      & .footer__item {
+        margin-bottom: 8px;
+
+        & .footer__link {
+          font-family: $font-base;
+          font-size: 14px;
+          color: $color-white;
+          text-decoration: none;
+
+          &:hover {
+            color: $color-primary;
+          }
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    border-top: 1px solid $color-border;
+    padding-top: 20px;
+  }
+
+  &__copy {
+    font-family: $font-base;
+    font-size: 12px;
+    color: $color-white;
+    margin-bottom: 12px;
+  }
+
+  &__social {
+    & .footer__social-link {
+      font-family: $font-base;
+      font-size: 14px;
+      color: $color-white;
+      margin-right: 10px;
+      text-decoration: none;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+}

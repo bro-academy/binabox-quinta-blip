@@ -1,0 +1,80 @@
+.banner {
+  background: $color-bg-light;
+  border-radius: $radius-md;
+  padding: 40px 20px;
+  text-align: center;
+
+  &__title {
+    font-family: $font-heading;
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 700;
+    color: $color-white;
+    margin-bottom: 16px;
+
+    .BINABOX {
+      color: $color-primary;
+    }
+  }
+
+  &__text {
+    font-family: $font-base;
+    font-size: 16px;
+    line-height: 24px;
+    color: $color-white;
+    margin-bottom: 24px;
+  }
+
+  &__actions {
+    margin-top: 20px;
+
+    .banner__button {
+      font-family: $font-base;
+      font-weight: 600;
+      border: none;
+      border-radius: $radius-sm;
+      padding: 10px 20px;
+      cursor: pointer;
+
+      &--primary {
+        background-color: $color-primary;
+        color: $color-white;
+      }
+
+      &--disable {
+        background-color: $color-bg-dark;
+        color: $color-white;
+      }
+    }
+  }
+
+  &__image {
+    display: block;
+    margin: 30px auto 0;
+    max-width: 100%;
+    border-radius: $radius-md;
+  }
+
+  &-section {
+    margin-top: 20px;
+
+    &__item {
+      margin-bottom: 12px;
+
+      &__value {
+        font-family: $font-heading;
+        font-size: 24px;
+        line-height: 32px;
+        color: $color-white;
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      &__text {
+        font-family: $font-base;
+        font-size: 14px;
+        color: $color-white;
+      }
+    }
+  }
+}

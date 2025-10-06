@@ -1,0 +1,39 @@
+.page-title {
+  margin-bottom: 40px;
+
+  &__heading {
+    font-family: $font-heading;
+    font-size: 32px;
+    line-height: 40px;
+    color: $color-white;
+    margin-bottom: 16px;
+  }
+
+  &__breadcrumbs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+
+    li {
+      display: inline;
+      margin-right: 8px;
+
+      &::after {
+        content: "/";
+        margin-left: 8px;
+      }
+
+      &:last-child::after {
+        content: "";
+      }
+    }
+
+    & .breadcrumbs__link {
+      text-decoration: none;
+      color: $color-white;
+      font-family: $font-base;
+      font-size: 14px;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+// main.scss
+
+// Abstracts
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+// Base
+@import 'base/global';
+
+// Components
+@import 'components/header';
+@import 'components/banner';
+@import 'components/catalog';
+@import 'components/blog';
+@import 'components/about';
+@import 'components/team';
+@import 'components/faq';
+@import 'components/footer';
+
+   // blog-page
+@import 'components/blog-page/blog-page';

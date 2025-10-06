@@ -1,0 +1,95 @@
+.catalog {
+  background: $color-bg-dark;
+  border-radius: $radius-md;
+  opacity: 0.95;
+  padding: 20px;
+
+  &__header {
+    margin-bottom: 30px;
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    color: $color-white;
+  }
+
+  &__button {
+    background-color: $color-bg-dark;
+    color: $color-white;
+    border: none;
+    font-family: $font-base;
+    font-weight: 600;
+    cursor: pointer;
+
+    &--default {
+      padding: 8px 18px;
+      border-radius: $radius-md;
+    }
+
+    &-left,
+    &-right {
+      @include button($color-primary);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &__controls {
+    margin-top: 10px;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    background: $color-bg-dark;
+    border-radius: $radius-md;
+    padding: 16px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  &__product {
+    display: block;
+  }
+
+  &__image {
+    border-radius: $radius-md;
+    margin-bottom: 8px;
+    max-width: 100%;
+    display: block;
+  }
+
+  &__value {
+    font-family: $font-heading;
+    font-size: 24px;
+    line-height: 32px;
+    color: $color-white;
+    margin: 5px 0;
+  }
+
+  &__badge {
+    font-family: $font-base;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: $radius-sm;
+
+    &--new {
+      background: $color-white;
+      color: $color-primary;
+    }
+
+    &--soldout {
+      background: #EA3829;
+      color: $color-white;
+    }
+  }
+}

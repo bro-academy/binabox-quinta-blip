@@ -1,0 +1,64 @@
+.team {
+  background: $color-bg-dark;
+  border-radius: $radius-md;
+  padding: 30px 20px;
+
+  &__title {
+    font-family: $font-heading;
+    font-size: 28px;
+    font-weight: 700;
+    color: $color-white;
+    margin-bottom: 20px;
+  }
+
+  &__card {
+    background: $color-bg-light;
+    border-radius: $radius-sm;
+    padding: 16px;
+    margin-bottom: 16px;
+    text-align: center;
+
+    &__image {
+      width: 100%;
+      max-width: 150px;
+      border-radius: $radius-sm;
+      margin-bottom: 12px;
+    }
+
+    &__name {
+      font-family: $font-heading;
+      font-size: 18px;
+      font-weight: 600;
+      color: $color-white;
+      margin-bottom: 4px;
+    }
+
+    &__role {
+      font-family: $font-base;
+      font-size: 14px;
+      color: $color-white;
+      margin-bottom: 8px;
+    }
+
+    &__social {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      &-item {
+        margin-bottom: 4px;
+
+        & a {
+          font-family: $font-base;
+          font-size: 12px;
+          color: $color-primary;
+          text-decoration: none;
+
+          &:hover {
+            color: $color-primary-dark;
+          }
+        }
+      }
+    }
+  }
+}
