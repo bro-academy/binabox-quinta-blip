@@ -1,25 +1,38 @@
-// _mixins.scss
-
 // Button Mixin
-// Usage: @include button($bg: #007bff, $color: #fff);
-@mixin button($bg: #007bff, $color: #fff, $radius: 4px, $padding: 0.5rem 1rem) {
+@mixin button($bg: v.$color-primary, $color: v.$color-white, $radius: v.$radius-md, $padding: v.$spacing-sm v.$spacing-md, $hover-bg: null) {
   background-color: $bg;
   color: $color;
   border: none;
   border-radius: $radius;
   padding: $padding;
-  font-family: "Poppins", Arial, sans-serif;
+  font-family: v.$font-base;
   font-weight: 600;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
+  @include transition(background-color, 0.2s, ease);
 
   &:hover {
-    opacity: 0.85;
+    @if $hover-bg != null {
+      background-color: $hover-bg;
+    } @else {
+      opacity: 0.85;
+    }
+  }
+
+  &:focus {
+    outline: none;
+    @if $hover-bg != null {
+      background-color: $hover-bg;
+    }
+  }
+
+  &:active {
+    transform: scale(0.97);
   }
 }
 
-/* Responsive Typography Mixin */
+// Responsive Typography
 @mixin responsive-text($mobile-size, $tablet-size: null, $desktop-size: null) {
   font-size: $mobile-size;
 
@@ -34,4 +47,28 @@
       font-size: $desktop-size;
     }
   }
+}
+
+// Flex-center Mixin
+@mixin flex-center($justify: center, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+// Visually-hidden (for accessibility)
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+// Generic Transition
+@mixin transition($props: all, $time: 0.3s, $ease: ease) {
+  transition: $props $time $ease;
 }

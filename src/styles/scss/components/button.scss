@@ -1,0 +1,33 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+@use 'sass:color';
+
+.btn {
+  @include m.button(
+    $bg: v.$btn-primary-bg,
+    $color: v.$color-white,
+    $radius: v.$btn-radius-sm,
+    $padding: v.$btn-padding-sm,
+    $hover-bg: v.$btn-primary-hover
+  );
+
+  &--secondary {
+    @include m.button(
+      $bg: v.$btn-secondary-bg,
+      $color: v.$color-white,
+      $radius: v.$btn-radius-sm,
+      $padding: v.$btn-padding-sm,
+      $hover-bg: color.adjust(v.$btn-secondary-bg, $lightness: -10%)
+    );
+  }
+
+  &--danger {
+    @include m.button(
+      $bg: v.$btn-danger-bg,
+      $color: v.$color-white,
+      $radius: v.$btn-radius-sm,
+      $padding: v.$btn-padding-sm,
+      $hover-bg: color.adjust(v.$btn-danger-bg, $lightness: -10%)
+    );
+  }
+}

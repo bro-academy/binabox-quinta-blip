@@ -1,134 +1,56 @@
-.blog-article {
-  margin-bottom: 40px;
+@use '../../abstracts/variables' as v;
+@use '../../abstracts/mixins' as m;
 
-  &__image {
-    margin-bottom: 16px;
-
-    img {
-      max-width: 100%;
-      border-radius: $radius-md;
-    }
-
-    figcaption {
-      font-family: $font-base;
-      font-size: 12px;
-      color: $color-white;
-      margin-top: 4px;
-    }
-  }
+.blog-aside {
+  margin-bottom: v.$blog-aside-margin-xl;
 
   &__title {
-    font-family: $font-heading;
-    font-size: 28px;
-    color: $color-white;
-    margin-bottom: 8px;
-  }
-
-  &__meta {
-    font-family: $font-base;
-    font-size: 12px;
-    color: $color-white;
-    margin-bottom: 16px;
-
-    & .blog-article__btn {
-      font-family: $font-base;
-      font-size: 12px;
-      font-weight: 600;
-      padding: 4px 12px;
-      border: none;
-      border-radius: $radius-sm;
-      cursor: pointer;
-    }
-
-    & .blog-article__btn--coming {
-      background: $color-primary;
-      color: $color-white;
-    }
-
-    & .blog-article__author,
-    & .blog-article__date {
-      margin-right: 8px;
-    }
-  }
-
-  &__text {
-    font-family: $font-base;
-    font-size: 14px;
-    line-height: 20px;
-    color: $color-white;
-    margin-bottom: 16px;
+    font-family: v.$font-heading;
+    font-size: v.$blog-aside-font-xl;
+    line-height: v.$blog-aside-line-height-xl;
+    color: v.$color-white;
+    margin-bottom: v.$blog-aside-margin-md;
+    @include m.responsive-text(v.$blog-aside-font-xl, 22px, 20px);
   }
 
   &__list {
-    list-style: disc;
-    padding-left: 20px;
-    margin-bottom: 16px;
-
-    li {
-      margin-bottom: 8px;
-      font-family: $font-base;
-      font-size: 14px;
-      color: $color-white;
-    }
+    list-style: none;
+    padding: 0;
+    margin-bottom: v.$blog-aside-margin-lg;
   }
 
-  &__features {
+  &__link {
     display: block;
-    margin-top: 16px;
-
-    .feature {
-      margin-bottom: 12px;
-
-      img {
-        max-width: 40px;
-        margin-bottom: 4px;
-      }
-
-      p {
-        font-family: $font-base;
-        font-size: 14px;
-        color: $color-white;
-      }
-    }
+    text-decoration: none;
+    color: v.$color-white;
+    font-family: v.$font-base;
+    font-size: v.$blog-aside-font-md;
+    padding: v.$blog-aside-padding-xs;
   }
+}
 
-  &__quote {
-    font-family: $font-base;
-    font-size: 14px;
-    color: $color-white;
-    margin: 24px 0;
-    border-left: 4px solid $color-primary;
-    padding-left: 16px;
+.tags__title {
+  font-family: v.$font-heading;
+  font-size: v.$blog-aside-font-lg;
+  color: v.$color-white;
+  margin-bottom: v.$blog-aside-margin-sm;
+}
 
-    cite {
-      display: block;
-      margin-top: 8px;
+.tags__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 
-      .rating {
-        font-weight: 600;
-      }
-
-      .company {
-        font-style: normal;
-        margin-left: 8px;
-      }
-    }
+  li {
+    margin-bottom: v.$blog-aside-margin-sm;
   }
+}
 
-  &__gallery {
-    margin-top: 24px;
-
-    img {
-      max-width: 100%;
-      margin-bottom: 4px;
-      border-radius: $radius-sm;
-    }
-
-    figcaption {
-      font-family: $font-base;
-      font-size: 12px;
-      color: $color-white;
-      margin-bottom: 16px;
-    }
-  }
+.tags__btn {
+  @include m.button(
+    $bg: v.$color-primary,
+    $color: v.$color-white,
+    $radius: v.$radius-sm,
+    $padding: v.$blog-aside-padding-sm
+  );
 }

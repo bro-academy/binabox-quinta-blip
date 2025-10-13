@@ -1,45 +1,49 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
 .catalog {
-  background: $color-bg-dark;
-  border-radius: $radius-md;
+  background: v.$color-bg-dark;
+  border-radius: v.$radius-md;
   opacity: 0.95;
-  padding: 20px;
+  padding: v.$catalog-padding-lg;
 
   &__header {
-    margin-bottom: 30px;
+    margin-bottom: v.$catalog-margin-xl;
   }
 
   &__title {
-    font-family: $font-heading;
+    font-family: v.$font-heading;
     font-weight: 400;
-    font-size: 24px;
-    line-height: 32px;
-    color: $color-white;
+    font-size: v.$catalog-font-xl;
+    line-height: v.$catalog-line-height-xl;
+    color: v.$color-white;
   }
 
   &__button {
-    background-color: $color-bg-dark;
-    color: $color-white;
-    border: none;
-    font-family: $font-base;
+    font-family: v.$font-base;
     font-weight: 600;
     cursor: pointer;
 
     &--default {
-      padding: 8px 18px;
-      border-radius: $radius-md;
+      @include m.button(
+        $bg: v.$color-bg-dark,
+        $color: v.$color-white,
+        $radius: v.$radius-md,
+        $padding: v.$catalog-padding-sm v.$catalog-padding-md
+      );
     }
 
     &-left,
     &-right {
-      @include button($color-primary);
+      @include m.button(v.$color-primary);
       border-radius: 50%;
-      width: 40px;
-      height: 40px;
+      width: v.$catalog-button-width;
+      height: v.$catalog-button-height;
     }
   }
 
   &__controls {
-    margin-top: 10px;
+    margin-top: v.$catalog-margin-sm;
   }
 
   &__list {
@@ -49,11 +53,11 @@
   }
 
   &__item {
-    background: $color-bg-dark;
-    border-radius: $radius-md;
-    padding: 16px;
+    background: v.$color-bg-dark;
+    border-radius: v.$radius-md;
+    padding: v.$catalog-padding-md;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: v.$catalog-margin-md;
   }
 
   &__product {
@@ -61,35 +65,35 @@
   }
 
   &__image {
-    border-radius: $radius-md;
-    margin-bottom: 8px;
+    border-radius: v.$radius-md;
+    margin-bottom: v.$catalog-margin-sm;
     max-width: 100%;
     display: block;
   }
 
   &__value {
-    font-family: $font-heading;
-    font-size: 24px;
-    line-height: 32px;
-    color: $color-white;
-    margin: 5px 0;
+    font-family: v.$font-heading;
+    font-size: v.$catalog-font-xl;
+    line-height: v.$catalog-line-height-xl;
+    color: v.$color-white;
+    margin: v.$catalog-margin-sm 0;
   }
 
   &__badge {
-    font-family: $font-base;
-    font-size: 14px;
+    font-family: v.$font-base;
+    font-size: v.$catalog-font-md;
     font-weight: 600;
-    padding: 4px 8px;
-    border-radius: $radius-sm;
+    padding: v.$catalog-padding-sm v.$catalog-padding-md;
+    border-radius: v.$radius-sm;
 
     &--new {
-      background: $color-white;
-      color: $color-primary;
+      background: v.$color-white;
+      color: v.$color-primary;
     }
 
     &--soldout {
-      background: #EA3829;
-      color: $color-white;
+      background: v.$color-danger;
+      color: v.$color-white;
     }
   }
 }

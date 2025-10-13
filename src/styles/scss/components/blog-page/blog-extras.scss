@@ -1,51 +1,55 @@
+@use '../../abstracts/variables' as v;
+@use '../../abstracts/mixins' as m;
+
 .blog-extras {
-  margin-top: 24px;
+  margin-top: v.$blog-extras-margin-xl;
 
   &__tags {
-    margin-bottom: 16px;
+    margin-bottom: v.$blog-extras-margin-lg;
 
     &-label {
-      font-family: $font-heading;
-      font-size: 14px;
-      color: $color-white;
-      margin-right: 8px;
+      font-family: v.$font-heading;
+      font-size: v.$blog-extras-font-lg;
+      color: v.$color-white;
+      margin-right: v.$blog-extras-margin-md;
     }
 
     .blog-extras__tag {
-      background: $color-primary-dark;
-      color: $color-white;
-      font-family: $font-base;
-      font-size: 12px;
-      font-weight: 600;
-      border: none;
-      border-radius: $radius-sm;
-      padding: 4px 8px;
-      margin-right: 4px;
-      cursor: pointer;
+      @include m.button(
+        $bg: v.$color-primary,
+        $color: v.$color-white,
+        $radius: v.$radius-sm,
+        $padding: v.$blog-extras-padding-sm
+      );
+      margin-right: v.$blog-extras-margin-md;
     }
   }
 
   &__share {
-    margin-top: 16px;
+    margin-top: v.$blog-extras-margin-lg;
 
     &-label {
-      font-family: $font-heading;
-      font-size: 14px;
-      color: $color-white;
-      margin-bottom: 8px;
+      font-family: v.$font-heading;
+      font-size: v.$blog-extras-font-lg;
+      color: v.$color-white;
+      margin-bottom: v.$blog-extras-margin-md;
       display: block;
     }
 
     .blog-extras__share-link {
-      font-family: $font-base;
-      font-size: 12px;
-      color: $color-white;
+      font-family: v.$font-base;
+      font-size: v.$blog-extras-font-md;
+      color: v.$color-white;
       text-decoration: none;
-      margin-right: 8px;
+      margin-right: v.$blog-extras-margin-md;
 
-      &--twitter { color: #1da1f2; }
-      &--facebook { color: #1877f2; }
-      &--telegram { color: #0088cc; }
+      &--twitter { color: v.$color-twitter; }
+      &--facebook { color: v.$color-facebook; }
+      &--telegram { color: v.$color-telegram; }
+
+      &:hover {
+        opacity: 0.8;
+      }
     }
   }
 }

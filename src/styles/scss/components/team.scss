@@ -1,43 +1,48 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
 .team {
-  background: $color-bg-dark;
-  border-radius: $radius-md;
-  padding: 30px 20px;
+  background: v.$color-bg-dark;
+  border-radius: v.$radius-md;
+  padding: v.$spacing-lg v.$spacing-md;
 
   &__title {
-    font-family: $font-heading;
-    font-size: 28px;
+    font-family: v.$font-heading;
+    font-size: v.$font-size-xl; // 28px
     font-weight: 700;
-    color: $color-white;
-    margin-bottom: 20px;
+    color: v.$color-white;
+    margin-bottom: v.$spacing-lg;
   }
 
   &__card {
-    background: $color-bg-light;
-    border-radius: $radius-sm;
-    padding: 16px;
-    margin-bottom: 16px;
+    background: v.$color-bg-light;
+    border-radius: v.$radius-sm;
+    padding: v.$spacing-md;
+    margin-bottom: v.$spacing-md;
     text-align: center;
+    @include m.flex-center(center, center);
+    @include m.transition(all, 0.3s, ease);
 
     &__image {
       width: 100%;
-      max-width: 150px;
-      border-radius: $radius-sm;
-      margin-bottom: 12px;
+      max-width: v.$card-max-width; // 150px
+      border-radius: v.$radius-sm;
+      margin-bottom: v.$spacing-sm;
     }
 
     &__name {
-      font-family: $font-heading;
-      font-size: 18px;
+      font-family: v.$font-heading;
+      font-size: v.$font-size-lg; // 18px
       font-weight: 600;
-      color: $color-white;
-      margin-bottom: 4px;
+      color: v.$color-white;
+      margin-bottom: v.$spacing-xs;
     }
 
     &__role {
-      font-family: $font-base;
-      font-size: 14px;
-      color: $color-white;
-      margin-bottom: 8px;
+      font-family: v.$font-base;
+      font-size: v.$font-size-sm; // 14px
+      color: v.$color-white;
+      margin-bottom: v.$spacing-sm;
     }
 
     &__social {
@@ -46,16 +51,17 @@
       margin: 0;
 
       &-item {
-        margin-bottom: 4px;
+        margin-bottom: v.$spacing-xs;
 
         & a {
-          font-family: $font-base;
-          font-size: 12px;
-          color: $color-primary;
+          font-family: v.$font-base;
+          font-size: v.$font-size-xs; // 12px
+          color: v.$color-primary;
           text-decoration: none;
+          @include m.transition(color, 0.3s, ease);
 
           &:hover {
-            color: $color-primary-dark;
+            color: v.$color-primary-dark;
           }
         }
       }

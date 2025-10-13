@@ -1,35 +1,39 @@
+@use '../../abstracts/variables' as v;
+@use '../../abstracts/mixins' as m;
+
 .blog-aside {
-  margin-bottom: 40px;
+  margin-bottom: v.$blog-aside-margin-xl;
 
   &__title {
-    font-family: $font-heading;
-    font-size: 24px;
-    line-height: 32px;
-    color: $color-white;
-    margin-bottom: 16px;
+    font-family: v.$font-heading;
+    font-size: v.$blog-aside-font-xl;
+    line-height: v.$blog-aside-line-height-xl;
+    color: v.$color-white;
+    margin-bottom: v.$blog-aside-margin-md;
+    @include m.responsive-text(v.$blog-aside-font-xl, 22px, 20px);
   }
 
   &__list {
     list-style: none;
     padding: 0;
-    margin: 0 0 24px 0;
+    margin-bottom: v.$blog-aside-margin-lg;
+  }
 
-    & .blog-aside__link {
-      display: block;
-      text-decoration: none;
-      color: $color-white;
-      font-family: $font-base;
-      font-size: 14px;
-      padding: 4px 0;
-    }
+  &__link {
+    display: block;
+    text-decoration: none;
+    color: v.$color-white;
+    font-family: v.$font-base;
+    font-size: v.$blog-aside-font-md;
+    padding: v.$blog-aside-padding-xs;
   }
 }
 
 .tags__title {
-  font-family: $font-heading;
-  font-size: 18px;
-  color: $color-white;
-  margin-bottom: 12px;
+  font-family: v.$font-heading;
+  font-size: v.$blog-aside-font-lg;
+  color: v.$color-white;
+  margin-bottom: v.$blog-aside-margin-sm;
 }
 
 .tags__list {
@@ -38,18 +42,15 @@
   margin: 0;
 
   li {
-    margin-bottom: 8px;
+    margin-bottom: v.$blog-aside-margin-sm;
   }
 }
 
 .tags__btn {
-  font-family: $font-base;
-  font-size: 12px;
-  font-weight: 600;
-  color: $color-white;
-  background: $color-primary-dark;
-  border: none;
-  border-radius: $radius-sm;
-  padding: 4px 8px;
-  cursor: pointer;
+  @include m.button(
+    $bg: v.$color-primary,
+    $color: v.$color-white,
+    $radius: v.$radius-sm,
+    $padding: v.$blog-aside-padding-sm
+  );
 }

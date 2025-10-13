@@ -1,13 +1,11 @@
 // _global.scss
 
-/* Import variables first */
-@import 'variables';
+@use 'sass:color';
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+ 
 
-/* Then import mixins */
-@import 'mixins';
-
-/* Reset & Base Styles */
-
+ /* Reset & Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -20,11 +18,11 @@ html {
 }
 
 body {
-  font-family: $font-primary;
+  font-family: $font-base;
   font-size: 16px;
   line-height: 1.6;
-  background-color: $color-bg;
-  color: rgba(255, 255, 255, 0.85);
+  background-color: $color-bg-dark;
+  color: $color-white-opacity;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -33,13 +31,13 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $font-heading;
   font-weight: 400;
   margin-bottom: $spacing-sm;
-  color: $color-light;
+  color: $color-white;
 }
 
 p {
   margin-bottom: $spacing-md;
   font-size: 1rem;
-  color: rgba(255, 255, 255, 0.85);
+  color: $color-white-opacity;
 }
 
 /* Links */
@@ -49,7 +47,8 @@ a {
   transition: color 0.2s ease;
 
   &:hover {
-    color: lighten($color-primary, 15%);
+    color: color.adjust($color-primary, $lightness: 15%);
+
   }
 }
 
@@ -62,16 +61,25 @@ button {
   background: none;
 }
 
-/* Primary Button */
-button.primary {
-  @include button($color-primary, #fff, 0.6rem 1.2rem, 6px, darken($color-primary, 10%));
+ .button-primary {
+  @include button(
+    $bg: $color-light,
+    $color: $color-primary,
+    $hover-bg: color.adjust($color-primary, $lightness: -10%)
+  );
 }
 
-/* Secondary Button */
-button.secondary {
-  @include button($color-light, $color-bg, 0.5rem 1rem, 4px, lighten($color-bg, 10%));
-}
 
+ button.secondary {
+  @include button(
+    $bg: $color-light,
+    $color: $color-bg-dark,
+    $radius: 4px,
+    $padding: 0.5rem 1rem,
+    $hover-bg: color.adjust($color-bg-dark, $lightness: 10%)
+
+  );
+ }
 
 /* Lists */
 ul, ol {

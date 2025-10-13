@@ -1,36 +1,38 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
 .blog {
-  background: $color-bg-dark;
-  border-radius: $radius-md;
-  padding: 30px 20px;
+  background: v.$color-bg-dark;
+  border-radius: v.$radius-md;
+  padding: v.$blog-padding-lg;
 
   &__title {
-    font-family: $font-heading;
-    font-size: 28px;
-    line-height: 36px;
+    font-family: v.$font-heading;
+    font-size: v.$blog-font-xl;
+    line-height: v.$blog-line-height-xl;
     font-weight: 700;
-    color: $color-white;
-    margin-bottom: 20px;
+    color: v.$color-white;
+    margin-bottom: v.$blog-margin-xl;
   }
 
   &__post {
-    background: $color-bg-light;
-    border-radius: $radius-sm;
-    padding: 20px;
-    margin-bottom: 20px;
+    background: v.$color-bg-light;
+    border-radius: v.$radius-sm;
+    padding: v.$blog-padding-md;
+    margin-bottom: v.$blog-margin-xl;
 
     &__image {
       display: block;
       width: 100%;
-      max-width: 100%;
-      border-radius: $radius-sm;
-      margin-bottom: 12px;
+      border-radius: v.$radius-sm;
+      margin-bottom: v.$blog-margin-md;
     }
 
     &__meta {
-      font-family: $font-base;
-      font-size: 12px;
-      color: $color-white;
-      margin-bottom: 8px;
+      font-family: v.$font-base;
+      font-size: v.$blog-font-sm;
+      color: v.$color-white;
+      margin-bottom: v.$blog-margin-sm;
 
       .blog__subtitle {
         font-weight: 600;
@@ -41,42 +43,45 @@
       }
 
       .blog__badge {
-        background-color: $color-primary;
-        color: $color-white;
-        padding: 2px 6px;
-        border-radius: $radius-sm;
+        background-color: v.$color-primary;
+        color: v.$color-white;
+        padding: v.$blog-padding-sm v.$blog-padding-md;
+        border-radius: v.$radius-sm;
         font-weight: 600;
-        margin-left: 4px;
+        margin-left: v.$blog-margin-sm;
       }
     }
 
     &__title {
-      font-family: $font-heading;
-      font-size: 20px;
+      font-family: v.$font-heading;
+      font-size: v.$blog-font-lg;
       font-weight: 700;
-      color: $color-white;
-      margin-bottom: 8px;
+      color: v.$color-white;
+      margin-bottom: v.$blog-margin-md;
     }
 
     &__description {
-      font-family: $font-base;
-      font-size: 14px;
-      color: $color-white;
-      margin-bottom: 12px;
+      font-family: v.$font-base;
+      font-size: v.$blog-font-md;
+      color: v.$color-white;
+      margin-bottom: v.$blog-margin-md;
     }
 
     &__btn {
-      font-family: $font-base;
-      font-weight: 600;
-      border: none;
-      border-radius: $radius-sm;
-      padding: 8px 16px;
-      cursor: pointer;
-      background-color: $color-primary;
-      color: $color-white;
+      @include m.button(
+        $bg: v.$color-primary,
+        $color: v.$color-white,
+        $radius: v.$radius-sm,
+        $padding: v.$blog-padding-sm v.$blog-padding-md
+      );
 
       &--read-more {
-        background-color: $color-primary-dark;
+        @include m.button(
+          $bg: v.$color-primary,
+          $color: v.$color-white,
+          $radius: v.$radius-sm,
+          $padding: v.$blog-padding-sm v.$blog-padding-md
+        );
       }
     }
   }

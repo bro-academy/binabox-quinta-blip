@@ -1,42 +1,51 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
 .faq {
-  background: $color-bg-dark;
-  border-radius: $radius-md;
-  padding: 30px 20px;
+  background: v.$color-bg-dark;
+  border-radius: v.$radius-md;
+  padding: v.$faq-padding-lg v.$faq-padding-md;
 
   &__title {
-    font-family: $font-heading;
-    font-size: 28px;
+    font-family: v.$font-heading;
+    font-size: v.$faq-font-xl;
     font-weight: 700;
-    color: $color-white;
-    margin-bottom: 20px;
+    color: v.$color-white;
+    margin-bottom: v.$faq-margin-xl;
   }
 
   &__item {
-    background: $color-bg-light;
-    border-radius: $radius-sm;
-    margin-bottom: 12px;
-    padding: 12px;
+    background: v.$color-bg-light;
+    border-radius: v.$radius-sm;
+    margin-bottom: v.$faq-margin-sm;
+    padding: v.$faq-padding-sm;
+    @include m.transition(all, 0.3s, ease);
 
     & summary {
-      font-family: $font-base;
-      font-size: 16px;
+      font-family: v.$font-base;
+      font-size: v.$faq-font-md;
       font-weight: 600;
-      color: $color-white;
+      color: v.$color-white;
       cursor: pointer;
+      @include m.transition(color, 0.3s, ease);
+
+      &:hover {
+        color: v.$color-primary;
+      }
     }
 
     &__question {
-      font-family: $font-base;
-      font-size: 16px;
+      font-family: v.$font-base;
+      font-size: v.$faq-font-md;
       font-weight: 600;
-      color: $color-white;
+      color: v.$color-white;
     }
 
     &__answer {
-      font-family: $font-base;
-      font-size: 14px;
-      color: $color-white;
-      margin-top: 8px;
+      font-family: v.$font-base;
+      font-size: v.$faq-font-sm;
+      color: v.$color-white;
+      margin-top: v.$faq-margin-xs;
     }
   }
 }

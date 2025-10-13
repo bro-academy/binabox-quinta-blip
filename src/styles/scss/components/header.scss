@@ -1,45 +1,156 @@
-.page-header {
-  background: $color-bg-dark;
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
 
-  &__logo-img {
-    width: 36px;
-    height: 40px;
-   
+.main-nav {
+  background: v.$color-bg-dark;
+  color: v.$color-white;
+  padding: v.$spacing-md 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  .container {
+    @include m.flex-center(space-between, center);
+    max-width: v.$header-max-width;
+    margin: 0 auto;
+    padding: 0 v.$spacing-lg;
+    flex-wrap: wrap;
+    gap: v.$spacing-md;
   }
 
-  &__link {
-    color: $color-white;
-    font-size: 16px;
+  /* ---------- Logo ---------- */
+  .logo {
+    display: flex;
+    align-items: center;
     text-decoration: none;
-  }
 
-  &__search {
-    background: $color-bg-dark;
-    color: $color-text-light;
-    border: 2px solid $color-gray;
-    border-radius: $radius-sm;
-    outline: none;
+    .site-header__logo-img {
+      height: v.$logo-height;
+      width: auto;
+      @include m.transition(transform, 0.3s, ease);
+    }
 
-    &::placeholder {
-      color: $color-gray;
-      opacity: 1;
+    &:hover .site-header__logo-img {
+      transform: scale(1.05);
     }
   }
 
-  &__btn {
-    border-radius: $radius-sm;
-    font-size: 14px;
+  /* ---------- Navigation Menu ---------- */
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    gap: v.$spacing-lg;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 
-    &--discord {
-      @include button(transparent);
-      border: 2px solid rgba(255, 255, 255, 0.2);
-      color: $color-white;
+    .nav-item {
+      .nav-link {
+        text-decoration: none;
+        color: v.$color-white;
+        font-family: v.$font-base;
+        font-weight: 500;
+        @include m.transition(color, 0.3s, ease);
+
+        &:hover {
+          color: v.$color-primary;
+        }
+      }
+
+      &.active .nav-link {
+        color: v.$color-primary;
+      }
+    }
+  }
+
+  /* ---------- Search ---------- */
+  .header-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    input[type="search"] {
+      padding: v.$spacing-sm v.$spacing-md;
+      border: 1px solid v.$color-border;
+      border-radius: v.$radius-md;
+      background: v.$color-bg-light;
+      color: v.$color-white;
+      width: v.$search-width-md;
+      @include m.transition(width, 0.3s, ease);
+      @include m.transition(border-color, 0.3s, ease);
+
+      &::placeholder {
+        color: v.$color-text-muted;
+      }
+
+      &:focus {
+        width: v.$search-width-lg;
+        outline: none;
+        border-color: v.$color-primary;
+      }
+    }
+  }
+
+  /* ---------- Buttons ---------- */
+  .page-header__btn--discord {
+    @include m.button(
+      $bg: v.$color-discord,
+      $color: v.$color-white,
+      $radius: v.$radius-md,
+      $hover-bg: v.$color-discord-hover
+    );
+  }
+
+  .page-header__btn--login {
+    @include m.button(
+      $bg: transparent,
+      $color: v.$color-primary,
+      $radius: v.$radius-md,
+      $hover-bg: v.$color-primary
+    );
+    border: 1px solid v.$color-primary;
+
+    &:hover {
+      color: v.$color-bg-dark;
+    }
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 992px) {
+    .container {
+      flex-wrap: wrap;
+      justify-content: center;
+      text-align: center;
     }
 
-    &--login {
-      @include button($color-primary);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: $color-white;
+    .nav-menu {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: v.$spacing-md;
+    }
+
+    .header-search {
+      order: 3;
+      margin-top: v.$spacing-sm;
+    }
+
+    .page-header__btn--discord,
+    .page-header__btn--login {
+      margin-top: v.$spacing-sm;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .nav-menu {
+      display: none; // hide on mobile; replace with burger menu if needed
+    }
+
+    .header-search input[type="search"] {
+      width: v.$search-width-sm;
+
+      &:focus {
+        width: v.$search-width-md;
+      }
     }
   }
 }

@@ -1,5 +1,5 @@
-@import "./_page-title.scss";
-@import "./_blog-aside.scss";
-@import "./_blog-article.scss";
-@import "./_blog-content.scss";
-@import "./_blog-extras.scss";
+@use './page-title' as *;
+@use './blog-aside' as *;
+@use './blog-article' as *;
+@use './blog-content' as *;
+@use './blog-extras' as *;

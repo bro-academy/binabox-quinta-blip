@@ -1,44 +1,48 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
 .footer {
-  background: $color-bg-dark;
-  padding: 40px 20px;
-  border-radius: $radius-md;
+  background: v.$color-bg-dark;
+  padding: v.$footer-padding-lg v.$footer-padding-md;
+  border-radius: v.$radius-md;
 
   &__main {
-    margin-bottom: 30px;
+    margin-bottom: v.$footer-margin-xl;
   }
 
   &__brand {
-    font-family: $font-heading;
-    font-size: 32px;
+    font-family: v.$font-heading;
+    font-size: v.$footer-font-xl;
     font-weight: 700;
-    color: $color-white;
-    margin-bottom: 12px;
+    color: v.$color-white;
+    margin-bottom: v.$footer-margin-sm;
   }
 
   &__description {
-    font-family: $font-base;
-    font-size: 14px;
-    color: $color-white;
-    margin-bottom: 20px;
+    font-family: v.$font-base;
+    font-size: v.$footer-font-lg;
+    color: v.$color-white;
+    margin-bottom: v.$footer-margin-md;
   }
 
   &__nav {
-    & .footer__list {
+    .footer__list {
       list-style: none;
       padding: 0;
       margin: 0;
 
-      & .footer__item {
-        margin-bottom: 8px;
+      .footer__item {
+        margin-bottom: v.$footer-margin-sm;
 
-        & .footer__link {
-          font-family: $font-base;
-          font-size: 14px;
-          color: $color-white;
+        .footer__link {
+          font-family: v.$font-base;
+          font-size: v.$footer-font-lg;
+          color: v.$color-white;
           text-decoration: none;
+          @include m.transition(color, 0.3s, ease);
 
           &:hover {
-            color: $color-primary;
+            color: v.$color-primary;
           }
         }
       }
@@ -46,27 +50,30 @@
   }
 
   &__bottom {
-    border-top: 1px solid $color-border;
-    padding-top: 20px;
+    border-top: 1px solid v.$color-border;
+    padding-top: v.$footer-margin-md;
   }
 
   &__copy {
-    font-family: $font-base;
-    font-size: 12px;
-    color: $color-white;
-    margin-bottom: 12px;
+    font-family: v.$font-base;
+    font-size: v.$footer-font-sm;
+    color: v.$color-white;
+    margin-bottom: v.$footer-margin-sm;
   }
 
   &__social {
-    & .footer__social-link {
-      font-family: $font-base;
-      font-size: 14px;
-      color: $color-white;
-      margin-right: 10px;
+    @include m.flex-center(flex-start, center);
+    gap: v.$footer-social-gap;
+
+    .footer__social-link {
+      font-family: v.$font-base;
+      font-size: v.$footer-font-lg;
+      color: v.$color-white;
       text-decoration: none;
+      @include m.transition(color, 0.3s, ease);
 
       &:hover {
-        color: $color-primary;
+        color: v.$color-primary;
       }
     }
   }

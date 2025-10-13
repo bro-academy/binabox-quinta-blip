@@ -1,31 +1,40 @@
+@use '../../abstracts/variables' as v;
+@use '../../abstracts/mixins' as m;
+
 .blog-content {
-  margin-top: 40px;
+  margin-top: v.$blog-content-margin-xl;
 
   &__title {
-    font-family: $font-heading;
-    font-size: 24px;
-    color: $color-white;
-    margin-bottom: 16px;
+    font-family: v.$font-heading;
+    font-size: v.$blog-content-font-xl;
+    color: v.$color-white;
+    margin-bottom: v.$blog-content-margin-lg;
+    @include m.responsive-text(v.$blog-content-font-xl, 22px, 20px);
   }
 
   &__text {
-    font-family: $font-base;
-    font-size: 14px;
-    line-height: 20px;
-    color: $color-white;
-    margin-bottom: 16px;
+    font-family: v.$font-base;
+    font-size: v.$blog-content-font-md;
+    line-height: v.$blog-content-line-height-md;
+    color: v.$color-white;
+    margin-bottom: v.$blog-content-margin-lg;
   }
 
   &__subtitle {
-    font-family: $font-heading;
-    font-size: 20px;
-    color: $color-white;
-    margin-bottom: 12px;
+    font-family: v.$font-heading;
+    font-size: v.$blog-content-font-lg;
+    color: v.$color-white;
+    margin-bottom: v.$blog-content-margin-md;
+    @include m.responsive-text(v.$blog-content-font-lg, 18px, 16px);
   }
 
   &__link {
-    color: $color-primary;
+    color: v.$color-primary;
     text-decoration: none;
     font-weight: 600;
+
+    &:hover {
+      color: v.$color-primary-dark;
+    }
   }
 }

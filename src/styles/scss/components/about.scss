@@ -1,64 +1,72 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
 .about {
-  background: $color-bg-dark;
-  border-radius: $radius-md;
-  padding: 30px 20px;
+  background: v.$color-bg-dark;
+  border-radius: v.$radius-md;
+  padding: v.$about-padding-lg;
 
   &__title {
-    font-family: $font-heading;
-    font-size: 28px;
+    font-family: v.$font-heading;
+    font-size: v.$about-font-xl;
     font-weight: 700;
-    color: $color-white;
-    margin-bottom: 16px;
+    color: v.$color-white;
+    margin-bottom: v.$about-margin-lg;
   }
 
   &__intro {
-    font-family: $font-base;
-    font-size: 14px;
-    line-height: 20px;
-    color: $color-white;
-    margin-bottom: 20px;
+    font-family: v.$font-base;
+    font-size: v.$about-font-md;
+    line-height: v.$about-line-height-md;
+    color: v.$color-white;
+    margin-bottom: v.$about-margin-xl;
   }
 
   &__list {
     list-style: none;
     padding: 0;
-    margin: 0 0 20px 0;
+    margin: 0 0 v.$about-margin-xl 0;
 
     &__item {
-      background: $color-bg-light;
-      border-radius: $radius-sm;
-      padding: 12px;
-      margin-bottom: 12px;
+      background: v.$color-bg-light;
+      border-radius: v.$radius-sm;
+      padding: v.$about-margin-md;
+      margin-bottom: v.$about-margin-md;
 
       &__subtitle {
-        font-family: $font-heading;
-        font-size: 18px;
+        font-family: v.$font-heading;
+        font-size: v.$about-font-lg;
         font-weight: 600;
-        color: $color-white;
-        margin-bottom: 6px;
+        color: v.$color-white;
+        margin-bottom: v.$about-margin-sm;
       }
 
       &__text {
-        font-family: $font-base;
-        font-size: 14px;
-        color: $color-white;
-        line-height: 20px;
+        font-family: v.$font-base;
+        font-size: v.$about-font-md;
+        color: v.$color-white;
+        line-height: v.$about-line-height-md;
       }
     }
   }
 
   .btn {
-    background-color: $color-primary;
-    color: $color-white;
-    font-family: $font-base;
-    font-weight: 600;
-    border: none;
-    border-radius: $radius-sm;
-    padding: 8px 16px;
-    cursor: pointer;
-
     &.load-more {
-      background-color: $color-primary-dark;
+      @include m.button(
+        $bg: v.$color-primary-dark,
+        $color: v.$color-white,
+        $radius: v.$radius-sm,
+        $padding: v.$spacing-sm v.$spacing-md
+      );
+    }
+
+    &:not(.load-more) {
+      @include m.button(
+        $bg: v.$color-primary,
+        $color: v.$color-white,
+        $radius: v.$radius-sm,
+        $padding: v.$spacing-sm v.$spacing-md
+      );
     }
   }
 }

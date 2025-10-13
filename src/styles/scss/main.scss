@@ -1,21 +1,26 @@
-// main.scss
+ // Abstracts
 
-// Abstracts
-@import 'abstracts/variables';
-@import 'abstracts/mixins';
+@use 'abstracts/variables' as v;
+@use 'abstracts/mixins' as m;
 
 // Base
-@import 'base/global';
+@use 'base/global' as g;
 
 // Components
-@import 'components/header';
-@import 'components/banner';
-@import 'components/catalog';
-@import 'components/blog';
-@import 'components/about';
-@import 'components/team';
-@import 'components/faq';
-@import 'components/footer';
+@use 'components/header' as header;
+@use 'components/banner' as banner;
+@use 'components/catalog' as catalog;
+@use 'components/blog' as blog;
+@use 'components/about' as about;
+@use 'components/team' as team;
+@use 'components/faq' as faq;
+@use 'components/footer' as footer;
+@use 'components/button' as button;
 
-   // blog-page
-@import 'components/blog-page/blog-page';
+
+// Blog Page
+@use 'components/blog-page/page-title' as pageTitle;
+@use 'components/blog-page/blog-aside' as blogAside;
+@use 'components/blog-page/blog-article' as blogArticle;
+@use 'components/blog-page/blog-content' as blogContent;
+@use 'components/blog-page/blog-extras' as blogExtras;

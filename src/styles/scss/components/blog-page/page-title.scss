@@ -1,12 +1,16 @@
+@use '../../abstracts/variables' as v;
+@use '../../abstracts/mixins' as m;
+
 .page-title {
-  margin-bottom: 40px;
+  margin-bottom: v.$page-title-margin-xl;
 
   &__heading {
-    font-family: $font-heading;
-    font-size: 32px;
-    line-height: 40px;
-    color: $color-white;
-    margin-bottom: 16px;
+    font-family: v.$font-heading;
+    font-size: v.$page-title-font-xl;
+    line-height: v.$page-title-line-height-xl;
+    color: v.$color-white;
+    margin-bottom: v.$page-title-margin-lg;
+    @include m.responsive-text(v.$page-title-font-xl, 28px, 24px);
   }
 
   &__breadcrumbs {
@@ -17,11 +21,11 @@
 
     li {
       display: inline;
-      margin-right: 8px;
+      margin-right: v.$page-title-margin-sm;
 
       &::after {
         content: "/";
-        margin-left: 8px;
+        margin-left: v.$page-title-margin-sm;
       }
 
       &:last-child::after {
@@ -29,11 +33,15 @@
       }
     }
 
-    & .breadcrumbs__link {
+    &__link {
       text-decoration: none;
-      color: $color-white;
-      font-family: $font-base;
-      font-size: 14px;
+      color: v.$color-white;
+      font-family: v.$font-base;
+      font-size: v.$page-title-font-lg;
+
+      &:hover {
+        color: v.$color-primary;
+      }
     }
   }
 }
