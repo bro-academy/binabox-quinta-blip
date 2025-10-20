@@ -1,87 +1,83 @@
 @use '../abstracts/variables' as v;
 @use '../abstracts/mixins' as m;
 
-.blog {
-  background: v.$color-bg-dark;
+.banner {
+  background: v.$color-bg-light;
   border-radius: v.$radius-md;
-  padding: v.$blog-padding-lg;
+  padding: v.$banner-padding-lg;
+  text-align: center;
 
   &__title {
     font-family: v.$font-heading;
-    font-size: v.$blog-font-xl;
-    line-height: v.$blog-line-height-xl;
+    font-size: v.$banner-font-xl;
+    line-height: v.$banner-line-height-xl;
     font-weight: 700;
     color: v.$color-white;
-    margin-bottom: v.$blog-margin-xl;
+    margin-bottom: v.$banner-margin-md;
+
+    .BINABOX {
+      color: v.$color-primary;
+    }
   }
 
-  &__post {
-    background: v.$color-bg-light;
-    border-radius: v.$radius-sm;
-    padding: v.$blog-padding-md;
-    margin-bottom: v.$blog-margin-xl;
+  &__text {
+    font-family: v.$font-base;
+    font-size: v.$banner-font-md;
+    line-height: v.$banner-line-height-md;
+    color: v.$color-white;
+    margin-bottom: v.$banner-margin-xl;
+  }
 
-    &__image {
-      display: block;
-      width: 100%;
-      border-radius: v.$radius-sm;
-      margin-bottom: v.$blog-margin-md;
-    }
+  &__actions {
+    margin-top: v.$banner-margin-lg;
 
-    &__meta {
-      font-family: v.$font-base;
-      font-size: v.$blog-font-sm;
-      color: v.$color-white;
-      margin-bottom: v.$blog-margin-sm;
-
-      .blog__subtitle {
-        font-weight: 600;
-      }
-
-      .blog__date {
-        font-style: italic;
-      }
-
-      .blog__badge {
-        background-color: v.$color-primary;
-        color: v.$color-white;
-        padding: v.$blog-padding-sm v.$blog-padding-md;
-        border-radius: v.$radius-sm;
-        font-weight: 600;
-        margin-left: v.$blog-margin-sm;
-      }
-    }
-
-    &__title {
-      font-family: v.$font-heading;
-      font-size: v.$blog-font-lg;
-      font-weight: 700;
-      color: v.$color-white;
-      margin-bottom: v.$blog-margin-md;
-    }
-
-    &__description {
-      font-family: v.$font-base;
-      font-size: v.$blog-font-md;
-      color: v.$color-white;
-      margin-bottom: v.$blog-margin-md;
-    }
-
-    &__btn {
-      @include m.button(
-        $bg: v.$color-primary,
-        $color: v.$color-white,
-        $radius: v.$radius-sm,
-        $padding: v.$blog-padding-sm v.$blog-padding-md
-      );
-
-      &--read-more {
+    .banner__button {
+      &--primary {
         @include m.button(
           $bg: v.$color-primary,
           $color: v.$color-white,
           $radius: v.$radius-sm,
-          $padding: v.$blog-padding-sm v.$blog-padding-md
+          $padding: v.$spacing-sm v.$spacing-md
         );
+      }
+
+      &--disable {
+        @include m.button(
+          $bg: v.$color-bg-dark,
+          $color: v.$color-white,
+          $radius: v.$radius-sm,
+          $padding: v.$spacing-sm v.$spacing-md
+        );
+      }
+    }
+  }
+
+  &__image {
+    display: block;
+    margin: v.$banner-margin-lg auto 0;
+    max-width: 100%;
+    border-radius: v.$radius-md;
+  }
+
+  &-section {
+    margin-top: v.$banner-margin-lg;
+
+    &__item {
+      margin-bottom: v.$banner-margin-sm;
+
+      &__value {
+        font-family: v.$font-heading;
+        font-size: v.$banner-font-lg;
+        line-height: v.$banner-line-height-lg;
+        color: v.$color-white;
+        display: block;
+        margin-bottom: v.$banner-margin-xs;
+      }
+
+      &__text {
+        font-family: v.$font-base;
+        font-size: v.$banner-font-sm;
+        color: v.$color-white;
       }
     }
   }

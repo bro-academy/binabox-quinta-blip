@@ -4,7 +4,7 @@
 .catalog {
   background: v.$color-bg-dark;
   border-radius: v.$radius-md;
-  opacity: 0.95;
+   opacity: v.$catalog-opacity;
   padding: v.$catalog-padding-lg;
 
   &__header {
@@ -35,8 +35,12 @@
 
     &-left,
     &-right {
-      @include m.button(v.$color-primary);
-      border-radius: 50%;
+      @include m.button(
+        $bg: v.$color-primary,
+        $color: v.$color-white,
+        $radius: v.$catalog-button-radius,
+        $padding: v.$catalog-button-padding 
+      );
       width: v.$catalog-button-width;
       height: v.$catalog-button-height;
     }

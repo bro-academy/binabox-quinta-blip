@@ -1,5 +1,16 @@
+// _mixins.scss
+
+// Import variables so "v" namespace exists
+@use './variables' as v;
+
 // Button Mixin
-@mixin button($bg: v.$color-primary, $color: v.$color-white, $radius: v.$radius-md, $padding: v.$spacing-sm v.$spacing-md, $hover-bg: null) {
+@mixin button(
+  $bg: v.$color-primary,
+  $color: v.$color-white,
+  $radius: v.$radius-md,
+  $padding: v.$spacing-sm v.$spacing-md,
+  $hover-bg: null
+) {
   background-color: $bg;
   color: $color;
   border: none;
@@ -71,4 +82,28 @@
 // Generic Transition
 @mixin transition($props: all, $time: 0.3s, $ease: ease) {
   transition: $props $time $ease;
+}
+
+// Interactive States (Links/Buttons)
+
+@mixin interactive-states(
+  $hover-color: v.$color-primary,
+  $active-color: v.$color-primary-dark,
+  $focus-outline: v.$color-primary
+) {
+  @include transition();
+
+  &:hover {
+    color: $hover-color;
+  }
+
+  &:active {
+    color: $active-color;
+    transform: scale(0.98);
+  }
+
+  &:focus-visible {
+    outline: 2px solid $focus-outline;
+    outline-offset: 3px;
+  }
 }

@@ -1,11 +1,11 @@
 // _global.scss
-
 @use 'sass:color';
-@use '../abstracts/variables' as *;
-@use '../abstracts/mixins' as *;
- 
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
 
- /* Reset & Base Styles */
+/* ------------------------------
+   Reset & Base Styles
+------------------------------ */
 * {
   margin: 0;
   padding: 0;
@@ -18,41 +18,48 @@ html {
 }
 
 body {
-  font-family: $font-base;
+  font-family: v.$font-base;
   font-size: 16px;
   line-height: 1.6;
-  background-color: $color-bg-dark;
-  color: $color-white-opacity;
+  background-color: v.$color-bg-dark;
+  color: v.$color-white-opacity;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Typography */
+/* ------------------------------
+   Typography
+------------------------------ */
 h1, h2, h3, h4, h5, h6 {
-  font-family: $font-heading;
+  font-family: v.$font-heading;
   font-weight: 400;
-  margin-bottom: $spacing-sm;
-  color: $color-white;
+  margin-bottom: v.$spacing-sm;
+  color: v.$color-white;
 }
 
 p {
-  margin-bottom: $spacing-md;
+  margin-bottom: v.$spacing-md;
   font-size: 1rem;
-  color: $color-white-opacity;
+  color: v.$color-white-opacity;
 }
 
-/* Links */
+/* ------------------------------
+   Links (Interactive)
+------------------------------ */
 a {
-  color: $color-primary;
+  color: v.$color-primary;
   text-decoration: none;
-  transition: color 0.2s ease;
+  font-weight: 500;
 
-  &:hover {
-    color: color.adjust($color-primary, $lightness: 15%);
-
-  }
+  @include m.interactive-states(
+    $hover-color: color.adjust(v.$color-primary, $lightness: 15%),
+    $active-color: color.adjust(v.$color-primary, $lightness: -10%),
+    $focus-outline: v.$color-primary
+  );
 }
 
-/* Buttons */
+/* ------------------------------
+   Buttons (Interactive)
+------------------------------ */
 button {
   font-family: inherit;
   font-size: inherit;
@@ -61,37 +68,49 @@ button {
   background: none;
 }
 
- .button-primary {
-  @include button(
-    $bg: $color-light,
-    $color: $color-primary,
-    $hover-bg: color.adjust($color-primary, $lightness: -10%)
+.button-primary {
+  @include m.button(
+    $bg: v.$color-light,
+    $color: v.$color-primary,
+    $hover-bg: color.adjust(v.$color-primary, $lightness: -10%)
+  );
+  @include m.interactive-states(
+    $hover-color: v.$color-white,
+    $active-color: v.$color-white,
+    $focus-outline: v.$color-primary
   );
 }
 
-
- button.secondary {
-  @include button(
-    $bg: $color-light,
-    $color: $color-bg-dark,
+button.secondary {
+  @include m.button(
+    $bg: v.$color-light,
+    $color: v.$color-bg-dark,
     $radius: 4px,
     $padding: 0.5rem 1rem,
-    $hover-bg: color.adjust($color-bg-dark, $lightness: 10%)
-
+    $hover-bg: color.adjust(v.$color-bg-dark, $lightness: 10%)
   );
- }
+  @include m.interactive-states(
+    $hover-color: v.$color-bg-dark,
+    $active-color: color.adjust(v.$color-bg-dark, $lightness: -10%),
+    $focus-outline: v.$color-primary
+  );
+}
 
-/* Lists */
+/* ------------------------------
+   Lists
+------------------------------ */
 ul, ol {
-  margin: $spacing-md 0;
-  padding-left: $spacing-lg;
+  margin: v.$spacing-md 0;
+  padding-left: v.$spacing-lg;
 }
 
 li {
-  margin-bottom: $spacing-sm;
+  margin-bottom: v.$spacing-sm;
 }
 
-/* Images */
+/* ------------------------------
+   Images
+------------------------------ */
 img {
   max-width: 100%;
   display: block;

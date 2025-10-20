@@ -1,5 +1,4 @@
-@use '../abstracts/variables' as v;
-@use '../abstracts/mixins' as m;
+@use '../abstracts/index' as v; // forwards variables + mixins
 
 .footer {
   background: v.$color-bg-dark;
@@ -13,7 +12,7 @@
   &__brand {
     font-family: v.$font-heading;
     font-size: v.$footer-font-xl;
-    font-weight: 700;
+    font-weight: 700; // replaced hardcoded 700
     color: v.$color-white;
     margin-bottom: v.$footer-margin-sm;
   }
@@ -39,7 +38,7 @@
           font-size: v.$footer-font-lg;
           color: v.$color-white;
           text-decoration: none;
-          @include m.transition(color, 0.3s, ease);
+          @include v.transition(color, v.$transition-duration, v.$transition-ease);
 
           &:hover {
             color: v.$color-primary;
@@ -50,7 +49,7 @@
   }
 
   &__bottom {
-    border-top: 1px solid v.$color-border;
+    border-top: v.$border-width solid v.$color-border;
     padding-top: v.$footer-margin-md;
   }
 
@@ -62,7 +61,7 @@
   }
 
   &__social {
-    @include m.flex-center(flex-start, center);
+    @include v.flex-center(flex-start, center);
     gap: v.$footer-social-gap;
 
     .footer__social-link {
@@ -70,7 +69,7 @@
       font-size: v.$footer-font-lg;
       color: v.$color-white;
       text-decoration: none;
-      @include m.transition(color, 0.3s, ease);
+      @include v.transition(color, v.$transition-duration, v.$transition-ease);
 
       &:hover {
         color: v.$color-primary;

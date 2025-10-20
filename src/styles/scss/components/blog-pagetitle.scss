@@ -1,5 +1,6 @@
-@use '../../abstracts/variables' as v;
-@use '../../abstracts/mixins' as m;
+// components/_blog-pagetitle.scss
+@use '../abstracts' as v;
+@use '../abstracts/mixins' as m;
 
 .page-title {
   margin-bottom: v.$page-title-margin-xl;

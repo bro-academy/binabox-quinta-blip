@@ -4,30 +4,30 @@
 
 .btn {
   @include m.button(
-    $bg: v.$btn-primary-bg,
+    $bg: v.$color-primary,
     $color: v.$color-white,
-    $radius: v.$btn-radius-sm,
+    $radius: v.$radius-sm,
     $padding: v.$btn-padding-sm,
-    $hover-bg: v.$btn-primary-hover
+    $hover-bg: v.$color-primary-dark
   );
 
   &--secondary {
     @include m.button(
-      $bg: v.$btn-secondary-bg,
+      $bg: v.$color-secondary,
       $color: v.$color-white,
-      $radius: v.$btn-radius-sm,
+      $radius: v.$radius-sm,
       $padding: v.$btn-padding-sm,
-      $hover-bg: color.adjust(v.$btn-secondary-bg, $lightness: -10%)
+      $hover-bg: v.$color-secondary-dark
     );
   }
 
   &--danger {
     @include m.button(
-      $bg: v.$btn-danger-bg,
+      $bg: v.$color-danger,
       $color: v.$color-white,
-      $radius: v.$btn-radius-sm,
+      $radius: v.$radius-sm,
       $padding: v.$btn-padding-sm,
-      $hover-bg: color.adjust(v.$btn-danger-bg, $lightness: -10%)
+      $hover-bg: v.$color-danger-dark
     );
   }
 }

@@ -1,5 +1,6 @@
-@use '../../abstracts/variables' as v;
-@use '../../abstracts/mixins' as m;
+// blog-pagecontent.scss
+@use '../abstracts' as v;
+@use '../abstracts/mixins' as m;
 
 .blog-content {
   margin-top: v.$blog-content-margin-xl;
