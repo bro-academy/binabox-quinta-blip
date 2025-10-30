@@ -1,0 +1,103 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.catalog {
+  background: v.$color-bg-dark;
+  border-radius: v.$radius-md;
+   opacity: v.$catalog-opacity;
+  padding: v.$catalog-padding-lg;
+
+  &__header {
+    margin-bottom: v.$catalog-margin-xl;
+  }
+
+  &__title {
+    font-family: v.$font-heading;
+    font-weight: 400;
+    font-size: v.$catalog-font-xl;
+    line-height: v.$catalog-line-height-xl;
+    color: v.$color-white;
+  }
+
+  &__button {
+    font-family: v.$font-base;
+    font-weight: 600;
+    cursor: pointer;
+
+    &--default {
+      @include m.button(
+        $bg: v.$color-bg-dark,
+        $color: v.$color-white,
+        $radius: v.$radius-md,
+        $padding: v.$catalog-padding-sm v.$catalog-padding-md
+      );
+    }
+
+    &-left,
+    &-right {
+      @include m.button(
+        $bg: v.$color-primary,
+        $color: v.$color-white,
+        $radius: v.$catalog-button-radius,
+        $padding: v.$catalog-button-padding 
+      );
+      width: v.$catalog-button-width;
+      height: v.$catalog-button-height;
+    }
+  }
+
+  &__controls {
+    margin-top: v.$catalog-margin-sm;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    background: v.$color-bg-dark;
+    border-radius: v.$radius-md;
+    padding: v.$catalog-padding-md;
+    text-align: center;
+    margin-bottom: v.$catalog-margin-md;
+  }
+
+  &__product {
+    display: block;
+  }
+
+  &__image {
+    border-radius: v.$radius-md;
+    margin-bottom: v.$catalog-margin-sm;
+    max-width: 100%;
+    display: block;
+  }
+
+  &__value {
+    font-family: v.$font-heading;
+    font-size: v.$catalog-font-xl;
+    line-height: v.$catalog-line-height-xl;
+    color: v.$color-white;
+    margin: v.$catalog-margin-sm 0;
+  }
+
+  &__badge {
+    font-family: v.$font-base;
+    font-size: v.$catalog-font-md;
+    font-weight: 600;
+    padding: v.$catalog-padding-sm v.$catalog-padding-md;
+    border-radius: v.$radius-sm;
+
+    &--new {
+      background: v.$color-white;
+      color: v.$color-primary;
+    }
+
+    &--soldout {
+      background: v.$color-danger;
+      color: v.$color-white;
+    }
+  }
+}

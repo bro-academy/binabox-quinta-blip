@@ -1,0 +1,79 @@
+@use '../abstracts/index' as v; // forwards variables + mixins
+
+.footer {
+  background: v.$color-bg-dark;
+  padding: v.$footer-padding-lg v.$footer-padding-md;
+  border-radius: v.$radius-md;
+
+  &__main {
+    margin-bottom: v.$footer-margin-xl;
+  }
+
+  &__brand {
+    font-family: v.$font-heading;
+    font-size: v.$footer-font-xl;
+    font-weight: 700; // replaced hardcoded 700
+    color: v.$color-white;
+    margin-bottom: v.$footer-margin-sm;
+  }
+
+  &__description {
+    font-family: v.$font-base;
+    font-size: v.$footer-font-lg;
+    color: v.$color-white;
+    margin-bottom: v.$footer-margin-md;
+  }
+
+  &__nav {
+    .footer__list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      .footer__item {
+        margin-bottom: v.$footer-margin-sm;
+
+        .footer__link {
+          font-family: v.$font-base;
+          font-size: v.$footer-font-lg;
+          color: v.$color-white;
+          text-decoration: none;
+          @include v.transition(color, v.$transition-duration, v.$transition-ease);
+
+          &:hover {
+            color: v.$color-primary;
+          }
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    border-top: v.$border-width solid v.$color-border;
+    padding-top: v.$footer-margin-md;
+  }
+
+  &__copy {
+    font-family: v.$font-base;
+    font-size: v.$footer-font-sm;
+    color: v.$color-white;
+    margin-bottom: v.$footer-margin-sm;
+  }
+
+  &__social {
+    @include v.flex-center(flex-start, center);
+    gap: v.$footer-social-gap;
+
+    .footer__social-link {
+      font-family: v.$font-base;
+      font-size: v.$footer-font-lg;
+      color: v.$color-white;
+      text-decoration: none;
+      @include v.transition(color, v.$transition-duration, v.$transition-ease);
+
+      &:hover {
+        color: v.$color-primary;
+      }
+    }
+  }
+}

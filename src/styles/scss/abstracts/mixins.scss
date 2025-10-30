@@ -1,0 +1,109 @@
+// _mixins.scss
+
+// Import variables so "v" namespace exists
+@use './variables' as v;
+
+// Button Mixin
+@mixin button(
+  $bg: v.$color-primary,
+  $color: v.$color-white,
+  $radius: v.$radius-md,
+  $padding: v.$spacing-sm v.$spacing-md,
+  $hover-bg: null
+) {
+  background-color: $bg;
+  color: $color;
+  border: none;
+  border-radius: $radius;
+  padding: $padding;
+  font-family: v.$font-base;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  @include transition(background-color, 0.2s, ease);
+
+  &:hover {
+    @if $hover-bg != null {
+      background-color: $hover-bg;
+    } @else {
+      opacity: 0.85;
+    }
+  }
+
+  &:focus {
+    outline: none;
+    @if $hover-bg != null {
+      background-color: $hover-bg;
+    }
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+}
+
+// Responsive Typography
+@mixin responsive-text($mobile-size, $tablet-size: null, $desktop-size: null) {
+  font-size: $mobile-size;
+
+  @if $tablet-size {
+    @media (min-width: 768px) {
+      font-size: $tablet-size;
+    }
+  }
+
+  @if $desktop-size {
+    @media (min-width: 1024px) {
+      font-size: $desktop-size;
+    }
+  }
+}
+
+// Flex-center Mixin
+@mixin flex-center($justify: center, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+// Visually-hidden (for accessibility)
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+// Generic Transition
+@mixin transition($props: all, $time: 0.3s, $ease: ease) {
+  transition: $props $time $ease;
+}
+
+// Interactive States (Links/Buttons)
+
+@mixin interactive-states(
+  $hover-color: v.$color-primary,
+  $active-color: v.$color-primary-dark,
+  $focus-outline: v.$color-primary
+) {
+  @include transition();
+
+  &:hover {
+    color: $hover-color;
+  }
+
+  &:active {
+    color: $active-color;
+    transform: scale(0.98);
+  }
+
+  &:focus-visible {
+    outline: 2px solid $focus-outline;
+    outline-offset: 3px;
+  }
+}

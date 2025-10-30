@@ -1,0 +1,6 @@
+// abstracts/_index.scss
+
+// Forward variables and mixins so they can be imported together
+@forward 'variables';
+@forward 'mixins';
+

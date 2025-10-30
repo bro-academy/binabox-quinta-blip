@@ -1,0 +1,51 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.faq {
+  background: v.$color-bg-dark;
+  border-radius: v.$radius-md;
+  padding: v.$faq-padding-lg v.$faq-padding-md;
+
+  &__title {
+    font-family: v.$font-heading;
+    font-size: v.$faq-font-xl;
+    font-weight: 700;
+    color: v.$color-white;
+    margin-bottom: v.$faq-margin-xl;
+  }
+
+  &__item {
+    background: v.$color-bg-light;
+    border-radius: v.$radius-sm;
+    margin-bottom: v.$faq-margin-sm;
+    padding: v.$faq-padding-sm;
+    @include m.transition(all, 0.3s, ease);
+
+    & summary {
+      font-family: v.$font-base;
+      font-size: v.$faq-font-md;
+      font-weight: 600;
+      color: v.$color-white;
+      cursor: pointer;
+      @include m.transition(color, 0.3s, ease);
+
+      &:hover {
+        color: v.$color-primary;
+      }
+    }
+
+    &__question {
+      font-family: v.$font-base;
+      font-size: v.$faq-font-md;
+      font-weight: 600;
+      color: v.$color-white;
+    }
+
+    &__answer {
+      font-family: v.$font-base;
+      font-size: v.$faq-font-sm;
+      color: v.$color-white;
+      margin-top: v.$faq-margin-xs;
+    }
+  }
+}

@@ -1,0 +1,118 @@
+// _global.scss
+@use 'sass:color';
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+/* ------------------------------
+   Reset & Base Styles
+------------------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: v.$font-base;
+  font-size: 16px;
+  line-height: 1.6;
+  background-color: v.$color-bg-dark;
+  color: v.$color-white-opacity;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ------------------------------
+   Typography
+------------------------------ */
+h1, h2, h3, h4, h5, h6 {
+  font-family: v.$font-heading;
+  font-weight: 400;
+  margin-bottom: v.$spacing-sm;
+  color: v.$color-white;
+}
+
+p {
+  margin-bottom: v.$spacing-md;
+  font-size: 1rem;
+  color: v.$color-white-opacity;
+}
+
+/* ------------------------------
+   Links (Interactive)
+------------------------------ */
+a {
+  color: v.$color-primary;
+  text-decoration: none;
+  font-weight: 500;
+
+  @include m.interactive-states(
+    $hover-color: color.adjust(v.$color-primary, $lightness: 15%),
+    $active-color: color.adjust(v.$color-primary, $lightness: -10%),
+    $focus-outline: v.$color-primary
+  );
+}
+
+/* ------------------------------
+   Buttons (Interactive)
+------------------------------ */
+button {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+
+.button-primary {
+  @include m.button(
+    $bg: v.$color-light,
+    $color: v.$color-primary,
+    $hover-bg: color.adjust(v.$color-primary, $lightness: -10%)
+  );
+  @include m.interactive-states(
+    $hover-color: v.$color-white,
+    $active-color: v.$color-white,
+    $focus-outline: v.$color-primary
+  );
+}
+
+button.secondary {
+  @include m.button(
+    $bg: v.$color-light,
+    $color: v.$color-bg-dark,
+    $radius: 4px,
+    $padding: 0.5rem 1rem,
+    $hover-bg: color.adjust(v.$color-bg-dark, $lightness: 10%)
+  );
+  @include m.interactive-states(
+    $hover-color: v.$color-bg-dark,
+    $active-color: color.adjust(v.$color-bg-dark, $lightness: -10%),
+    $focus-outline: v.$color-primary
+  );
+}
+
+/* ------------------------------
+   Lists
+------------------------------ */
+ul, ol {
+  margin: v.$spacing-md 0;
+  padding-left: v.$spacing-lg;
+}
+
+li {
+  margin-bottom: v.$spacing-sm;
+}
+
+/* ------------------------------
+   Images
+------------------------------ */
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}

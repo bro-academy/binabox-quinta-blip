@@ -1,0 +1,70 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.team {
+  background: v.$color-bg-dark;
+  border-radius: v.$radius-md;
+  padding: v.$spacing-lg v.$spacing-md;
+
+  &__title {
+    font-family: v.$font-heading;
+    font-size: v.$font-size-xl; // 28px
+    font-weight: 700;
+    color: v.$color-white;
+    margin-bottom: v.$spacing-lg;
+  }
+
+  &__card {
+    background: v.$color-bg-light;
+    border-radius: v.$radius-sm;
+    padding: v.$spacing-md;
+    margin-bottom: v.$spacing-md;
+    text-align: center;
+    @include m.flex-center(center, center);
+    @include m.transition(all, 0.3s, ease);
+
+    &__image {
+      width: 100%;
+      max-width: v.$card-max-width; // 150px
+      border-radius: v.$radius-sm;
+      margin-bottom: v.$spacing-sm;
+    }
+
+    &__name {
+      font-family: v.$font-heading;
+      font-size: v.$font-size-lg; // 18px
+      font-weight: 600;
+      color: v.$color-white;
+      margin-bottom: v.$spacing-xs;
+    }
+
+    &__role {
+      font-family: v.$font-base;
+      font-size: v.$font-size-sm; // 14px
+      color: v.$color-white;
+      margin-bottom: v.$spacing-sm;
+    }
+
+    &__social {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      &-item {
+        margin-bottom: v.$spacing-xs;
+
+        & a {
+          font-family: v.$font-base;
+          font-size: v.$font-size-xs; // 12px
+          color: v.$color-primary;
+          text-decoration: none;
+          @include m.transition(color, 0.3s, ease);
+
+          &:hover {
+            color: v.$color-primary-dark;
+          }
+        }
+      }
+    }
+  }
+}

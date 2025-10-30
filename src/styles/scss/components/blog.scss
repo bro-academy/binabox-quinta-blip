@@ -1,0 +1,84 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.banner {
+  background: v.$color-bg-light;
+  border-radius: v.$radius-md;
+  padding: v.$banner-padding-lg;
+  text-align: center;
+
+  &__title {
+    font-family: v.$font-heading;
+    font-size: v.$banner-font-xl;
+    line-height: v.$banner-line-height-xl;
+    font-weight: 700;
+    color: v.$color-white;
+    margin-bottom: v.$banner-margin-md;
+
+    .BINABOX {
+      color: v.$color-primary;
+    }
+  }
+
+  &__text {
+    font-family: v.$font-base;
+    font-size: v.$banner-font-md;
+    line-height: v.$banner-line-height-md;
+    color: v.$color-white;
+    margin-bottom: v.$banner-margin-xl;
+  }
+
+  &__actions {
+    margin-top: v.$banner-margin-lg;
+
+    .banner__button {
+      &--primary {
+        @include m.button(
+          $bg: v.$color-primary,
+          $color: v.$color-white,
+          $radius: v.$radius-sm,
+          $padding: v.$spacing-sm v.$spacing-md
+        );
+      }
+
+      &--disable {
+        @include m.button(
+          $bg: v.$color-bg-dark,
+          $color: v.$color-white,
+          $radius: v.$radius-sm,
+          $padding: v.$spacing-sm v.$spacing-md
+        );
+      }
+    }
+  }
+
+  &__image {
+    display: block;
+    margin: v.$banner-margin-lg auto 0;
+    max-width: 100%;
+    border-radius: v.$radius-md;
+  }
+
+  &-section {
+    margin-top: v.$banner-margin-lg;
+
+    &__item {
+      margin-bottom: v.$banner-margin-sm;
+
+      &__value {
+        font-family: v.$font-heading;
+        font-size: v.$banner-font-lg;
+        line-height: v.$banner-line-height-lg;
+        color: v.$color-white;
+        display: block;
+        margin-bottom: v.$banner-margin-xs;
+      }
+
+      &__text {
+        font-family: v.$font-base;
+        font-size: v.$banner-font-sm;
+        color: v.$color-white;
+      }
+    }
+  }
+}

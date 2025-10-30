@@ -1,0 +1,48 @@
+// components/_blog-pagetitle.scss
+@use '../abstracts' as v;
+@use '../abstracts/mixins' as m;
+
+.page-title {
+  margin-bottom: v.$page-title-margin-xl;
+
+  &__heading {
+    font-family: v.$font-heading;
+    font-size: v.$page-title-font-xl;
+    line-height: v.$page-title-line-height-xl;
+    color: v.$color-white;
+    margin-bottom: v.$page-title-margin-lg;
+    @include m.responsive-text(v.$page-title-font-xl, 28px, 24px);
+  }
+
+  &__breadcrumbs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+
+    li {
+      display: inline;
+      margin-right: v.$page-title-margin-sm;
+
+      &::after {
+        content: "/";
+        margin-left: v.$page-title-margin-sm;
+      }
+
+      &:last-child::after {
+        content: "";
+      }
+    }
+
+    &__link {
+      text-decoration: none;
+      color: v.$color-white;
+      font-family: v.$font-base;
+      font-size: v.$page-title-font-lg;
+
+      &:hover {
+        color: v.$color-primary;
+      }
+    }
+  }
+}

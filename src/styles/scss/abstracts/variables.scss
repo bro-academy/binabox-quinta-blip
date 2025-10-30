@@ -1,0 +1,326 @@
+// _variables.scss
+
+// ------------------------------
+// Colors
+// ------------------------------
+$color-bg-dark: #0d0d15;
+$color-bg-darker: #151723;
+$color-bg-light: #1a1a22;
+$color-white: #ffffff;
+$color-white-opacity: rgba(255, 255, 255, 0.85);
+$color-gray: #aaa;
+$color-gray-light: #cccccc;
+$color-primary: #007bff;
+$color-secondary: #0265DC;
+$color-danger: #EA3829;
+$color-footer: #0e0e15;
+$color-text-light: #F5F8FB;
+$color-text-muted: #ccc;
+$color-light: #f5f5f5;
+$color-primary-dark: #0056b3;
+$color-border: #333;
+$color-primary-dark: #123456;
+$color-secondary-dark: #654321;
+$color-danger-dark: #ff0000;
+
+// Social colors
+$color-twitter: #1da1f2;
+$color-facebook: #1877f2;
+$color-telegram: #0088cc;
+ 
+// Fonts
+$font-heading: 'Bakbak One', Arial, sans-serif;
+$font-base: 'Poppins', Arial, sans-serif;
+
+// Spacing (px)
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 32px;
+$spacing-xl: 48px;
+
+// Border radius
+$radius-sm: 2px;
+$radius-md: 4px;
+$radius-lg: 6px;
+
+// Header
+$header-max-width: 1200px;
+$logo-height: 40px;
+$search-width-sm: 120px;
+$search-width-md: 200px;
+$search-width-lg: 300px;
+
+// Discord Button
+$color-discord: #1a1a1a;        
+$color-discord-hover: #333333; 
+
+// Banner
+$banner-padding-sm: 16px;
+$banner-padding-md: 32px;
+$banner-padding-lg: 48px;
+$banner-padding-xl: 64px;
+$banner-padding-xs: 8px;
+
+$banner-margin-sm: 16px;
+$banner-margin-md: 32px;
+$banner-margin-lg: 48px;
+$banner-margin-xl: 64px;
+$banner-margin-xs: 8px;
+
+$banner-font-xl: 32px;
+$banner-font-lg: 24px;
+$banner-font-md: 18px;
+$banner-font-sm: 14px;
+
+$banner-line-height-xl: 1.4;
+$banner-line-height-lg: 1.3;
+$banner-line-height-md: 1.2;
+
+
+// Blog Aside
+
+$blog-aside-margin-sm: 8px;
+$blog-aside-margin-md: 16px;
+$blog-aside-margin-lg: 24px;
+$blog-aside-margin-xl: 32px;
+
+$blog-aside-padding-xs: 4px;
+$blog-aside-padding-sm: 8px;
+
+$blog-aside-font-xl: 24px;
+$blog-aside-font-lg: 18px;
+$blog-aside-font-md: 14px;
+
+$blog-aside-line-height-xl: 1.4;
+$blog-aside-line-height-lg: 1.3;
+$blog-aside-line-height-md: 1.2;
+
+// About Section
+$about-padding-lg: 32px;
+
+$about-font-xl: 32px;
+$about-font-lg: 24px;
+$about-font-md: 18px;
+
+$about-line-height-md: 1.5;
+
+$about-margin-sm: 8px;
+$about-margin-md: 16px;
+$about-margin-lg: 24px;
+$about-margin-xl: 32px;
+
+// Buttons
+$btn-primary-bg: $color-primary;
+$btn-primary-hover: $color-primary-dark;
+$btn-secondary-bg: $color-light;
+$btn-danger-bg: $color-danger;
+
+$btn-radius-sm: 4px;
+$btn-padding-sm: 8px 16px;
+$btn-padding-md: 12px 24px;
+
+// Catalog Spacing
+$catalog-padding-sm: 8px;
+$catalog-padding-md: 16px;
+$catalog-padding-lg: 32px;
+
+$catalog-margin-sm: 8px;
+$catalog-margin-md: 16px;
+$catalog-margin-xl: 32px;
+
+// Catalog Fonts
+$catalog-font-md: 14px;
+$catalog-font-xl: 18px;
+
+// Catalog Line Heights
+$catalog-line-height-xl: 22px;
+
+// Catalog Buttons
+$catalog-button-width: 40px;
+$catalog-button-height: 40px;
+$catalog-opacity: 0.95 !default;
+$catalog-button-radius: 50% !default;
+$catalog-button-padding: 0 !default;
+
+
+
+
+// Blog Variables
+
+// Spacing / Padding
+$blog-padding-sm: 8px;
+$blog-padding-md: 16px;
+$blog-padding-lg: 32px;
+
+// Margins
+$blog-margin-sm: 8px;
+$blog-margin-md: 16px;
+$blog-margin-lg: 24px;
+$blog-margin-xl: 32px;
+
+// Fonts
+$blog-font-sm: 14px;
+$blog-font-md: 16px;
+$blog-font-lg: 18px;
+$blog-font-xl: 24px;
+
+// Line Heights
+$blog-line-height-sm: 18px;
+$blog-line-height-md: 20px;
+$blog-line-height-lg: 22px;
+$blog-line-height-xl: 28px;
+
+
+// ------------------------------
+// Team Variables
+// ------------------------------
+
+// Spacing (already exists)
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 32px;
+
+// Font sizes
+$font-size-xs: 12px;
+$font-size-sm: 14px;
+$font-size-md: 16px;
+$font-size-lg: 18px;
+$font-size-xl: 28px;
+
+// Card sizes
+$card-max-width: 150px;
+
+// ------------------------
+// FAQ
+// ------------------------
+$faq-padding-xs: 4px;
+$faq-padding-sm: 8px;
+$faq-padding-md: 16px;
+$faq-padding-lg: 32px;
+
+$faq-margin-xs: 4px;
+$faq-margin-sm: 8px;
+$faq-margin-md: 16px;
+$faq-margin-lg: 32px;
+$faq-margin-xl: 48px;
+
+$faq-font-sm: 14px;
+$faq-font-md: 16px;
+$faq-font-lg: 18px;
+$faq-font-xl: 24px;
+
+
+// Footer Spacing
+$footer-padding-sm: 8px;
+$footer-padding-md: 16px;
+$footer-padding-lg: 32px;
+
+$footer-margin-xs: 4px;
+$footer-margin-sm: 8px;
+$footer-margin-md: 16px;
+$footer-margin-lg: 32px;
+$footer-margin-xl: 48px;
+
+// Footer Font Sizes
+$footer-font-sm: 12px;
+$footer-font-md: 14px;
+$footer-font-lg: 16px;
+$footer-font-xl: 20px;
+
+// Footer Other
+$footer-social-gap: 8px;
+
+// abstracts/_variables.scss
+
+$transition-duration: 0.3s !default;
+$transition-ease: ease !default;
+$border-width: 1px !default;
+
+
+
+// Page Title Spacing
+$page-title-margin-xs: 4px;
+$page-title-margin-sm: 8px;
+$page-title-margin-md: 16px;
+$page-title-margin-lg: 24px;
+$page-title-margin-xl: 32px;
+
+// Page Title Font Sizes
+$page-title-font-sm: 14px;
+$page-title-font-md: 18px;
+$page-title-font-lg: 20px;
+$page-title-font-xl: 28px;
+
+// Page Title Line Heights
+$page-title-line-height-sm: 1.2;
+$page-title-line-height-md: 1.3;
+$page-title-line-height-lg: 1.4;
+$page-title-line-height-xl: 1.5;
+
+
+// Blog Content Spacing
+$blog-content-margin-xs: 8px;
+$blog-content-margin-sm: 16px;
+$blog-content-margin-md: 24px;
+$blog-content-margin-lg: 32px;
+$blog-content-margin-xl: 48px;
+
+// Blog Content Fonts
+$blog-content-font-sm: 14px;
+$blog-content-font-md: 16px;
+$blog-content-font-lg: 18px;
+$blog-content-font-xl: 24px;
+
+// Blog Content Line Heights
+$blog-content-line-height-sm: 1.2;
+$blog-content-line-height-md: 1.4;
+$blog-content-line-height-lg: 1.6;
+$blog-content-line-height-xl: 1.8;
+
+
+// Blog Extras Variables
+
+// Margins
+$blog-extras-margin-xl: 48px;
+$blog-extras-margin-lg: 32px;
+$blog-extras-margin-md: 16px;
+$blog-extras-margin-sm: 8px;
+
+// Padding
+$blog-extras-padding-sm: 8px;
+$blog-extras-padding-md: 16px;
+$blog-extras-padding-lg: 24px;
+
+// Font Sizes
+$blog-extras-font-xl: 28px;
+$blog-extras-font-lg: 20px;
+$blog-extras-font-md: 16px;
+$blog-extras-font-sm: 14px;
+
+
+// ======================
+// Blog Page Variables
+// ======================
+
+// Shared
+$blog-aside-margin-xl: 3rem;
+$blog-aside-font-xl: 1.5rem;
+$blog-aside-line-height-xl: 1.4;
+$blog-aside-margin-md: 1rem;
+$blog-aside-margin-sm: 0.5rem;
+$blog-aside-padding-xs: 0.5rem;
+
+// Blog Article
+$blog-article-margin-xl: 3rem;
+$blog-article-margin-lg: 2rem;
+$blog-article-margin-md: 1rem;
+$blog-article-margin-sm: 0.5rem;
+
+$blog-article-font-xl: 2rem;
+$blog-article-font-md: 1rem;
+$blog-article-font-sm: 0.875rem;
+$blog-article-line-height-xl: 1.5;
+$blog-article-line-height-md: 1.6 !default;
+

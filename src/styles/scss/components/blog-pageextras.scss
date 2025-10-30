@@ -1,0 +1,56 @@
+// blog-page/_blog-extras.scss
+@use '../abstracts' as v;
+@use '../abstracts/mixins' as m;
+
+.blog-extras {
+  margin-top: v.$blog-extras-margin-xl;
+
+  &__tags {
+    margin-bottom: v.$blog-extras-margin-lg;
+
+    &-label {
+      font-family: v.$font-heading;
+      font-size: v.$blog-extras-font-lg;
+      color: v.$color-white;
+      margin-right: v.$blog-extras-margin-md;
+    }
+
+    .blog-extras__tag {
+      @include m.button(
+        $bg: v.$color-primary,
+        $color: v.$color-white,
+        $radius: v.$radius-sm,
+        $padding: v.$blog-extras-padding-sm
+      );
+      margin-right: v.$blog-extras-margin-md;
+    }
+  }
+
+  &__share {
+    margin-top: v.$blog-extras-margin-lg;
+
+    &-label {
+      font-family: v.$font-heading;
+      font-size: v.$blog-extras-font-lg;
+      color: v.$color-white;
+      margin-bottom: v.$blog-extras-margin-md;
+      display: block;
+    }
+
+    .blog-extras__share-link {
+      font-family: v.$font-base;
+      font-size: v.$blog-extras-font-md;
+      color: v.$color-white;
+      text-decoration: none;
+      margin-right: v.$blog-extras-margin-md;
+
+      &--twitter { color: v.$color-twitter; }
+      &--facebook { color: v.$color-facebook; }
+      &--telegram { color: v.$color-telegram; }
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}

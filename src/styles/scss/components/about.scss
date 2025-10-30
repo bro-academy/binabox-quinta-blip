@@ -1,0 +1,72 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.about {
+  background: v.$color-bg-dark;
+  border-radius: v.$radius-md;
+  padding: v.$about-padding-lg;
+
+  &__title {
+    font-family: v.$font-heading;
+    font-size: v.$about-font-xl;
+    font-weight: 700;
+    color: v.$color-white;
+    margin-bottom: v.$about-margin-lg;
+  }
+
+  &__intro {
+    font-family: v.$font-base;
+    font-size: v.$about-font-md;
+    line-height: v.$about-line-height-md;
+    color: v.$color-white;
+    margin-bottom: v.$about-margin-xl;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 v.$about-margin-xl 0;
+
+    &__item {
+      background: v.$color-bg-light;
+      border-radius: v.$radius-sm;
+      padding: v.$about-margin-md;
+      margin-bottom: v.$about-margin-md;
+
+      &__subtitle {
+        font-family: v.$font-heading;
+        font-size: v.$about-font-lg;
+        font-weight: 600;
+        color: v.$color-white;
+        margin-bottom: v.$about-margin-sm;
+      }
+
+      &__text {
+        font-family: v.$font-base;
+        font-size: v.$about-font-md;
+        color: v.$color-white;
+        line-height: v.$about-line-height-md;
+      }
+    }
+  }
+
+  .btn {
+    &.load-more {
+      @include m.button(
+        $bg: v.$color-primary-dark,
+        $color: v.$color-white,
+        $radius: v.$radius-sm,
+        $padding: v.$spacing-sm v.$spacing-md
+      );
+    }
+
+    &:not(.load-more) {
+      @include m.button(
+        $bg: v.$color-primary,
+        $color: v.$color-white,
+        $radius: v.$radius-sm,
+        $padding: v.$spacing-sm v.$spacing-md
+      );
+    }
+  }
+}

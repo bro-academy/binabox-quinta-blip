@@ -1,0 +1,25 @@
+// main.scss
+
+// Import everything from abstracts at once
+@use 'abstracts/index' as *; // forwards variables and mixins
+
+// Base styles
+@use 'base/global';
+
+// Components
+@use 'components/header';
+@use 'components/banner';
+@use 'components/catalog';
+@use 'components/blog';
+@use 'components/about';
+@use 'components/team';
+@use 'components/faq';
+@use 'components/footer';
+@use 'components/button';
+
+// Blog Page Components
+@use 'components/blog-pagetitle';
+@use 'components/blog-pageaside';
+@use 'components/blog-pagearticle';
+@use 'components/blog-pagecontent';
+@use 'components/blog-pageextras';
